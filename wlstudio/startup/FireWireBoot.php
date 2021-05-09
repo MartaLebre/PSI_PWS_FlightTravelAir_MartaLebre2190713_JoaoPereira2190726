@@ -72,7 +72,6 @@ require (WL_MOD_BASE_DIR . DIRECTORY_SEPARATOR . 'router.php');
 Profiler::finish('WL: Loading Router');
 Profiler::finish('WL: Bootstrapping Armored Core');
 
-
 require 'debug-collectors.php';
 
 // Router Resolve
@@ -81,5 +80,6 @@ use ArmoredCore\Facades\Router;
 $url = $_SERVER['REQUEST_URI'];
 $view = Router::resolve($url);
 
+// Cache
 //$url = md5($url);
 //$cache->set($url, $view);

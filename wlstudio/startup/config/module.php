@@ -1,6 +1,6 @@
 <?php
 // Web Module Configuration
-// A web module requires an entry in themiddleware/froncontroller
+// A web module requires an entry in the middleware/froncontroller
 // ServerMod
 // registerServerMod
 

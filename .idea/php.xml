@@ -3,10 +3,6 @@
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/Windwalker/Cache" />
-      <path value="$PROJECT_DIR$/vendor/Windwalker/http" />
-      <path value="$PROJECT_DIR$/vendor/Windwalker/edge" />
-      <path value="$PROJECT_DIR$/vendor/Windwalker/renderer" />
-      <path value="$PROJECT_DIR$/vendor/Windwalker/uri" />
       <path value="$PROJECT_DIR$/vendor/Stolz/Assets" />
       <path value="$PROJECT_DIR$/vendor/Symfony/Component" />
       <path value="$PROJECT_DIR$/vendor/Psr/Hug" />
@@ -16,7 +12,6 @@
       <path value="$PROJECT_DIR$/vendor/Psr/Http" />
       <path value="$PROJECT_DIR$/vendor/Psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/Psr/Interop" />
-      <path value="$PROJECT_DIR$/vendor/zendframework/zend-diactoros" />
       <path value="$PROJECT_DIR$/vendor/Netpromotion/Profiler" />
       <path value="$PROJECT_DIR$/vendor/phpFastCache/Exceptions" />
       <path value="$PROJECT_DIR$/vendor/phpFastCache/Cache" />
@@ -44,35 +39,23 @@
       <path value="$PROJECT_DIR$/vendor/Hoa/Event" />
       <path value="$PROJECT_DIR$/vendor/Hoa/Consistency" />
       <path value="$PROJECT_DIR$/vendor/Hoa/Protocol" />
-      <path value="$PROJECT_DIR$/vendor/Windwalker/loader" />
-      <path value="$PROJECT_DIR$/vendor/Windwalker/structure" />
       <path value="$PROJECT_DIR$/vendor/tracy/tracy" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/container" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/contracts" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/support" />
-      <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/Symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/vendor/Symfony/translation" />
-      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/vendor/Psr/simple-cache" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/database" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/vendor/Symfony/finder" />
-      <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/vendor/Symfony/mime" />
-      <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/vendor/Symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/translation" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/validation" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/filesystem" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/hashing" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/events" />
-      <path value="$PROJECT_DIR$/vendor/laravelbook/ardent" />
       <path value="$PROJECT_DIR$/vendor/php-activerecord/examples" />
       <path value="$PROJECT_DIR$/vendor/php-activerecord/lib" />
       <path value="$PROJECT_DIR$/vendor/php-activerecord/test" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/Psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/Nette/php-generator" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-php80" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7" />

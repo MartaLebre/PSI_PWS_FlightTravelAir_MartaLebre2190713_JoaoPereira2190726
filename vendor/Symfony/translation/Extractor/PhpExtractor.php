@@ -21,9 +21,9 @@ use Symfony\Component\Translation\MessageCatalogue;
  */
 class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
 {
-    const MESSAGE_TOKEN = 300;
-    const METHOD_ARGUMENTS_TOKEN = 1000;
-    const DOMAIN_TOKEN = 1001;
+    public const MESSAGE_TOKEN = 300;
+    public const METHOD_ARGUMENTS_TOKEN = 1000;
+    public const DOMAIN_TOKEN = 1001;
 
     /**
      * Prefix for new found message.
@@ -50,7 +50,25 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
         ],
         [
             '->',
+            'transChoice',
+            '(',
+            self::MESSAGE_TOKEN,
+            ',',
+            self::METHOD_ARGUMENTS_TOKEN,
+            ',',
+            self::METHOD_ARGUMENTS_TOKEN,
+            ',',
+            self::DOMAIN_TOKEN,
+        ],
+        [
+            '->',
             'trans',
+            '(',
+            self::MESSAGE_TOKEN,
+        ],
+        [
+            '->',
+            'transChoice',
             '(',
             self::MESSAGE_TOKEN,
         ],
@@ -72,7 +90,7 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
     /**
      * {@inheritdoc}
      */
-    public function setPrefix(string $prefix)
+    public function setPrefix($prefix)
     {
         $this->prefix = $prefix;
     }
@@ -100,7 +118,7 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
     {
         for (; $tokenIterator->valid(); $tokenIterator->next()) {
             $t = $tokenIterator->current();
-            if (T_WHITESPACE !== $t[0]) {
+            if (\T_WHITESPACE !== $t[0]) {
                 break;
             }
         }
@@ -148,23 +166,36 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
             }
 
             switch ($t[0]) {
-                case T_START_HEREDOC:
+                case \T_START_HEREDOC:
                     $docToken = $t[1];
                     break;
-                case T_ENCAPSED_AND_WHITESPACE:
-                case T_CONSTANT_ENCAPSED_STRING:
+                case \T_ENCAPSED_AND_WHITESPACE:
+                case \T_CONSTANT_ENCAPSED_STRING:
                     if ('' === $docToken) {
                         $message .= PhpStringTokenParser::parse($t[1]);
                     } else {
                         $docPart = $t[1];
                     }
                     break;
-                case T_END_HEREDOC:
+                case \T_END_HEREDOC:
+                    if ($indentation = strspn($t[1], ' ')) {
+                        $docPartWithLineBreaks = $docPart;
+                        $docPart = '';
+
+                        foreach (preg_split('~(\r\n|\n|\r)~', $docPartWithLineBreaks, -1, \PREG_SPLIT_DELIM_CAPTURE) as $str) {
+                            if (\in_array($str, ["\r\n", "\n", "\r"], true)) {
+                                $docPart .= $str;
+                            } else {
+                                $docPart .= substr($str, $indentation);
+                            }
+                        }
+                    }
+
                     $message .= PhpStringTokenParser::parseDocString($docToken, $docPart);
                     $docToken = '';
                     $docPart = '';
                     break;
-                case T_WHITESPACE:
+                case \T_WHITESPACE:
                     break;
                 default:
                     break 2;
@@ -176,9 +207,17 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
 
     /**
      * Extracts trans message from PHP tokens.
+     *
+     * @param array  $tokens
+     * @param string $filename
      */
-    protected function parseTokens(array $tokens, MessageCatalogue $catalog, string $filename)
+    protected function parseTokens($tokens, MessageCatalogue $catalog/*, string $filename*/)
     {
+        if (\func_num_args() < 3 && __CLASS__ !== static::class && __CLASS__ !== (new \ReflectionMethod($this, __FUNCTION__))->getDeclaringClass()->getName() && !$this instanceof \PHPUnit\Framework\MockObject\MockObject && !$this instanceof \Prophecy\Prophecy\ProphecySubjectInterface && !$this instanceof \Mockery\MockInterface) {
+            @trigger_error(sprintf('The "%s()" method will have a new "string $filename" argument in version 5.0, not defining it is deprecated since Symfony 4.3.', __METHOD__), \E_USER_DEPRECATED);
+        }
+        $filename = 2 < \func_num_args() ? func_get_arg(2) : '';
+
         $tokenIterator = new \ArrayIterator($tokens);
 
         for ($key = 0; $key < $tokenIterator->count(); ++$key) {
@@ -226,13 +265,15 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
     }
 
     /**
+     * @param string $file
+     *
      * @return bool
      *
      * @throws \InvalidArgumentException
      */
-    protected function canBeExtracted(string $file)
+    protected function canBeExtracted($file)
     {
-        return $this->isFile($file) && 'php' === pathinfo($file, PATHINFO_EXTENSION);
+        return $this->isFile($file) && 'php' === pathinfo($file, \PATHINFO_EXTENSION);
     }
 
     /**

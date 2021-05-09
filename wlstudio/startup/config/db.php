@@ -10,4 +10,3 @@ $defaultDbConnection = array (
     'CHARSET'       => 'utf8',
     'COLLATION'     => 'utf8_unicode_ci',
 );
-

@@ -8,8 +8,7 @@ if ('WL_DEBUG_ENABLED') {
     //unset($handler);
     //unset($GLOBALS['handler']);
     Debugger::$showBar = true;
-    //Debugger::enable();
-    Debugger::enable(Debugger::DEVELOPMENT);
+    Debugger::enable(Debugger::DEVELOPMENT, WL_LOGS_BASE_DIR);
 } else {
     Debugger::enable();
 }
@@ -21,7 +20,7 @@ $microtime = [
 ];
 
 
-// todo refactor afterwards
+// TODO refactor afterwards
 if(isset($GLOBALS['cachedPage'])){
 
     echo $GLOBALS['cachedPage'];

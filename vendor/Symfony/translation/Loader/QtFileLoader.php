@@ -27,7 +27,7 @@ class QtFileLoader implements LoaderInterface
     /**
      * {@inheritdoc}
      */
-    public function load($resource, string $locale, string $domain = 'messages')
+    public function load($resource, $locale, $domain = 'messages')
     {
         if (!stream_is_local($resource)) {
             throw new InvalidResourceException(sprintf('This is not a local file "%s".', $resource));
@@ -65,7 +65,7 @@ class QtFileLoader implements LoaderInterface
                 $translation = $translation->nextSibling;
             }
 
-            if (class_exists('Symfony\Component\Config\Resource\FileResource')) {
+            if (class_exists(FileResource::class)) {
                 $catalogue->addResource(new FileResource($resource));
             }
         }

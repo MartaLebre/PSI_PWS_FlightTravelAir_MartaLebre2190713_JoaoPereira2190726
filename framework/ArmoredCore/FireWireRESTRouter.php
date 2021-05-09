@@ -296,13 +296,8 @@ class FireWireRESTRouter implements RouterInterface, ComponentRegisterInterface
 
 
             $controllerClassName = $routingRule[0];
-            //echo $controllerClassName;
 
             $methodInstanceName = $routingRule[1];
-
-            //echo $methodInstanceName;
-
-            //die();
 
         }
 

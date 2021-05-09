@@ -39,7 +39,7 @@ require ( 'debug-env.php' );
 require ( 'Micro-Kernel.php' );
 
 // ORM System Bootstrap
-//require ( 'ORM-bootstrap.php' );
+require ( 'ORM-bootstrap.php' );
 
 // Template Engines bootstrap
 require ( 'TemplateEngine-Bootstrap.php' );
@@ -72,7 +72,6 @@ require (WL_MOD_BASE_DIR . DIRECTORY_SEPARATOR . 'router.php');
 Profiler::finish('WL: Loading Router');
 Profiler::finish('WL: Bootstrapping Armored Core');
 
-
 require 'debug-collectors.php';
 
 // Router Resolve
@@ -81,5 +80,6 @@ use ArmoredCore\Facades\Router;
 $url = $_SERVER['REQUEST_URI'];
 $view = Router::resolve($url);
 
+// Cache
 //$url = md5($url);
 //$cache->set($url, $view);
