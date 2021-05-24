@@ -122,6 +122,34 @@ class MVCInspector
                     $tag = ' (App Root Controller)';
                     break;
 
+                case 'AeroportController' :
+                    $tag = ' (Aeroport Controller)';
+                    break;
+
+                case 'UserController' :
+                    $tag = ' (User Controller)';
+                    break;
+
+                case 'FlightController' :
+                    $tag = ' (Flight Controller)';
+                    break;
+
+                case 'PlaneController' :
+                    $tag = ' (Plane Controller)';
+                    break;
+
+                case 'PlaneScaleController' :
+                    $tag = ' (PlaneScale Controller)';
+                    break;
+
+                case 'ScaleController' :
+                    $tag = ' (Scale Controller)';
+                    break;
+
+                case 'TicketController' :
+                    $tag = ' (Ticket Controller)';
+                    break;
+
                 default :
 
                     $classInterfaces = class_implements($controller);
