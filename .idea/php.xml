@@ -56,7 +56,35 @@
       <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/structure" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/edge" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/uri" />
+      <path value="$PROJECT_DIR$/vendor/Psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/http" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/loader" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/renderer" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/laravelbook/ardent" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/hashing" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/container" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/translation" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/events" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/validation" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-intl-idn" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
 </project>
