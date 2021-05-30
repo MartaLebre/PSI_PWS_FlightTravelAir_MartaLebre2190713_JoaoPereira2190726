@@ -60,6 +60,8 @@ class LoginController
         if (is_null($userexists)) {
             $user->role = 'passageiro';
 
+            var_dump($user);
+
             if ($user->is_valid()) {
                 $user->save();
                 Redirect::toRoute('login/getlogin');
@@ -69,6 +71,10 @@ class LoginController
         } else {
             Redirect::flashToRoute('login/getregistration', ['user' => $user]);
         }
+
+
+
+
     }
 
     public function logout()
