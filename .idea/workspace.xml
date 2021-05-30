@@ -20,13 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7001a1a5-552a-4369-8b2d-3d517ff80e18" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/webapp/view/layout/adminheader.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/view/layout/gestorVooheader.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/view/layout/operadorCheckinheader.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/view/layout/passageiroheader.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/home/login.phtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/layout/indexheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/indexheader.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/Flight.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Flight.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/Plane.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Plane.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/PlaneScale.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/PlaneScale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/Scale.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Scale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/Ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Ticket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/login/registrationform.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/login/registrationform.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +213,7 @@
     <property name="SearchEverywhereHistoryKey" value="Debugger::barDump&#9;null&#9;null&#10;code sty&#9;ACTION&#9;ChangeCodeStyleScheme&#10;Session::start&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/webapp/view/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/webapp/view" />
     <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
     <property name="recentsLimit" value="5" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -228,11 +229,11 @@
       <recent name="C:\wamp64\www\weblogicmvc\framework\ArmoredCore" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\PWS_FlightTravelAir\webapp\view" />
       <recent name="C:\wamp64\www\PWS_FlightTravelAir\webapp\view\layout" />
       <recent name="C:\wamp64\www\PWS_FlightTravelAir\webapp\model" />
       <recent name="C:\wamp64\www\weblogicmvc\wlstudio\model" />
       <recent name="C:\wamp64\www\weblogicmvc\wlstudio\controller" />
-      <recent name="C:\wamp64\www\weblogicmvc\webapp\startup" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.weblogicmvc">

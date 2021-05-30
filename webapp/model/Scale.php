@@ -4,12 +4,12 @@
 class Scale extends \ActiveRecord\Model
 {
     static $validates_presence_of = array(
-        array('dataHoraOrigem'),
-        array('dataHoraDestino'),
+        array('datahoraorigem'),
+        array('datahoradestino'),
         array('distancia'),
-        array('idAeroportoOrigem'),
-        array('idAeroportoDestino'),
-        array('idVoo'),
+        array('idaeroportoorigem'),
+        array('idaeroportodestino'),
+        array('idvoo'),
 
     );
 }

@@ -4,7 +4,7 @@
 class Flight extends \ActiveRecord\Model
 {
     static $validates_presence_of = array(
-        array('precoVoo'),
-        array('idAeroporto'),
+        array('precovoo'),
+        array('idaeroporto'),
     );
 }

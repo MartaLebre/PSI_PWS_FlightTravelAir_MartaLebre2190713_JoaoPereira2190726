@@ -4,12 +4,12 @@
 class Ticket extends \ActiveRecord\Model
 {
     static $validates_presence_of = array(
-        array('precoFinal'),
-        array('dataHoraCompra'),
+        array('precofinal'),
+        array('datahoracompra'),
         array('checkin'),
-        array('idVooIda'),
-        array('idVooVolta'),
-        array('idUtilizador'),
+        array('idvooida'),
+        array('idvoovolta'),
+        array('idutilizador'),
 
     );
 

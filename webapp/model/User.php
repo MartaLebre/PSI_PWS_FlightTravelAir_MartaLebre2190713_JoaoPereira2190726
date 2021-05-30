@@ -6,7 +6,7 @@ class User extends Model
 {
 
     static $validates_presence_of = array(
-        array('nome'),
+        array('nomecompleto'),
         array('morada'),
         array('email'),
         array('nif'),
@@ -17,7 +17,7 @@ class User extends Model
     );
 
     static $validates_size_of = array(
-        array('nome', 'maximum' => 80),
+        array('nomecompleto', 'maximum' => 80),
         array('morada', 'maximum' => 120),
         array('email', 'maximum' => 60),
         array('nif', 'maximum' => 9),

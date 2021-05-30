@@ -6,7 +6,7 @@ class Plane extends \ActiveRecord\Model
     static $validates_presence_of = array(
         array('referencia'),
         array('lotacao'),
-        array('tipoAviao'),
+        array('tipoaviao'),
 
     );
     static $validates_numericality_of = array(
