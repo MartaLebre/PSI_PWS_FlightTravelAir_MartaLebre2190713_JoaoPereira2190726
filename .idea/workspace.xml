@@ -20,10 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7001a1a5-552a-4369-8b2d-3d517ff80e18" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/webapp/controller/BaseAuthController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/controller/FuncionarioController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/model/AuthManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/Aeroport.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Aeroport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/Flight.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Flight.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/Plane.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Plane.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/PlaneScale.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/PlaneScale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/Scale.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Scale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/Ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Ticket.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,8 +257,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHP Script.startupconfig.php" />
       <item itemvalue="PHPUnit.weblogicmvc" />
+      <item itemvalue="PHP Script.startupconfig.php" />
     </list>
     <recent_temporary>
       <list>
