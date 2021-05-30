@@ -21,7 +21,7 @@ class LoginController
         $username = Post::get('username');
         $password = Post::get('password');
 
-        $user = User::find_by_username_and_palavrachave($username, $password);
+        $user = User::find_by_username_and_password($username, $password);
 
         \ArmoredCore\WebObjects\Debug::barDump($user);
 

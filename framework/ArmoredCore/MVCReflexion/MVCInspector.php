@@ -122,48 +122,17 @@ class MVCInspector
                     $tag = ' (App Root Controller)';
                     break;
 
-                case 'AeroportController' :
-                    $tag = ' (Aeroport Controller)';
-                    break;
-
-                case 'UserController' :
-                    $tag = ' (User Controller)';
-                    break;
-
-                case 'FlightController' :
-                    $tag = ' (Flight Controller)';
-                    break;
-
-                case 'PlaneController' :
-                    $tag = ' (Plane Controller)';
-                    break;
-
-                case 'PlaneScaleController' :
-                    $tag = ' (PlaneScale Controller)';
-                    break;
-
-                case 'ScaleController' :
-                    $tag = ' (Scale Controller)';
-                    break;
-
-                case 'TicketController' :
-                    $tag = ' (Ticket Controller)';
-                    break;
-
-                default :
-
+                /*default :
                     $classInterfaces = class_implements($controller);
-
                     if (array_key_exists('ArmoredCore\Interfaces\ResourceControllerInterface', $classInterfaces)) {
                         $tag = '(User defined Controller [Resource Controller type])';
                     } else {
                         $tag = '(User defined Controller)';
                     }
-
-                    break;
+                    break;*/
             }
 
-            array_push($taggedControllers, ($controller . $tag));
+            //array_push($taggedControllers, ($controller . $tag));
 
         }
 

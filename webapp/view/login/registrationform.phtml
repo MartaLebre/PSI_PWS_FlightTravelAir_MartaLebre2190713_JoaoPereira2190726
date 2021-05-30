@@ -25,9 +25,9 @@ Layout::includeLayout('header') ?>
                         <hr>
                         <form method="post" action="<?=Url::toRoute('login/doregistration')?>">
                             <div class="top-margin">
-                                <label>Nome <span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$user->nomeCompleto?>" name="nomeCompleto" class="form-control" placeholder="Insira o seu nome completo">
-                                <?= ErrMgr::bind('nomeCompleto') ?>
+                                <label>Nome Completo <span class="text-danger">*</span></label>
+                                <input type="text" autocomplete="off" value="<?=$user->nome?>" name="nome" class="form-control" placeholder="Insira o seu nome completo">
+                                <?= ErrMgr::bind('nome') ?>
                             </div>
                             <div class="top-margin">
                                 <label>Morada <span class="text-danger">*</span></label>

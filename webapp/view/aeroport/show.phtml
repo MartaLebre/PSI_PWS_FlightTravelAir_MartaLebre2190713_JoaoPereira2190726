@@ -1,0 +1,61 @@
+<?php use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+
+Layout::includeLayout('adminheader') ?>
+<?php $aeroport = Data::get('aeroport') ?>
+
+<!-- container -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Article main content -->
+        <article class="col-xs-12 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">Aeroporto '<?=$aeroport->nome?>'</h1>
+            </header>
+
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <hr>
+
+                        <form method="post" action="<?=Url::toRoute('aeroport/index')?>">
+                            <div class="top-margin">
+                                <label>Nome <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$aeroport->nome?>" name="nome" class="form-control">
+                            </div>
+                            <div class="top-margin">
+                                <label>Localidade <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$aeroporto->localidade?>" name="localidade" class="form-control">
+                            </div>
+
+                            <div class="top-margin">
+                                <label>País <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$aeroporto->pais?>" name="pais" class="form-control">
+                            </div>
+
+                            <div class="top-margin">
+                                <label>Telefone <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$aeroporto->telefone?>" name="telefone" class="form-control">
+                            </div>
+                            <hr>
+
+                            <div class="col-lg-4 text-right">
+                                <button class="btn btn-action" type="submit">Voltar</button>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+    </div>
+
+    </article>
+    <!-- /Article -->
+
+</div>
+</div>	<!-- /container -->
+
+<?php Layout::includeLayout('footer') ?>

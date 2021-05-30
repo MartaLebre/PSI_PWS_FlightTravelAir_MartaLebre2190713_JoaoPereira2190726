@@ -1,0 +1,52 @@
+<?php use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+
+Layout::includeLayout('adminheader') ?>
+<?php $aeroports = Data::get('aeroport') ?>
+
+<!-- container -->
+<div class="container">
+
+    <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">Aeroportos</li>
+    </ol>
+
+    <h2 class="text-left top-space">Aeroportos</h2>
+    <h2 class="top-space"></h2>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-striped"><thead><th><h3>Id</h3></th><th><h3>Nome</h3></th><th><h3>Morada</h3></th><th><h3>NIF</h3></th><th><h3>Telefone</h3></th><th><h3>Email</h3></th><th><h3>Ações de Gestão</h3></th></thead>
+                <tbody>
+                <?php foreach ($aeroports as $aeroport) { ?>
+                    <tr>
+                        <td><?=$aeroport->id?></td>
+                        <td><?=$aeroport->nome?></td>
+                        <td><?=$aeroport->morada?></td>
+                        <td><?=$aeroport->nif?></td>
+                        <td><?=$aeroport->telefone?></td>
+                        <td><?=$aeroport->email?></td>
+                        <td>
+                            <a href="<?=Url::toRoute('aeroport/show', $aeroport->id)?>" class="btn btn-info" role="button">Ver</a>
+                            <a href="<?=Url::toRoute('aeroport/edit', $aeroport->id)?>" class="btn btn-warning" role="button">Editar</a>
+                            <a href="<?=Url::toRoute('aeroport/destroy', $aeroport->id)?>" class="btn btn-danger" role="button">Eliminar</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+
+                </tbody>
+
+            </table>
+
+        </div>
+        <div class="col-sm-6">
+            <h3>Registar um novo Aeroporto</h3>
+            <p>
+                <a href="<?=Url::toRoute('aeroport/create')?>" class="btn btn-info" role="button">Criar</a>
+            </p>
+        </div>
+    </div> <!-- /row -->
+
+</div>	<!-- /container -->
+<?php Layout::includeLayout('footer')?>
