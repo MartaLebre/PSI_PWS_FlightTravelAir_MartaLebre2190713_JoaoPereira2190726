@@ -20,22 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7001a1a5-552a-4369-8b2d-3d517ff80e18" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/database/pws_flighttravelair.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/controller/AeroportController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/controller/FlightController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/controller/PlaneController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/controller/PlaneScaleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/controller/ScaleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/controller/TicketController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/controller/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/model/Flight.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/model/Plane.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/model/PlaneScale.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/model/Scale.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/model/Ticket.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/controller/BaseAuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/controller/FuncionarioController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/model/AuthManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/ArmoredCore/MVCReflexion/MVCInspector.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ArmoredCore/MVCReflexion/MVCInspector.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/startup/config/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/startup/config/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,6 +291,7 @@
       <workItem from="1620203370807" duration="1209000" />
       <workItem from="1620204927142" duration="5128000" />
       <workItem from="1621863562083" duration="1677000" />
+      <workItem from="1622381533807" duration="1471000" />
     </task>
     <servers />
   </component>
