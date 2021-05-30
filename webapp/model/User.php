@@ -27,6 +27,11 @@ class User extends Model
         array('role', 'maximum' => 13)
     );
 
+
+    static $validates_inclusion_of = array(
+        array('role', 'in' => array ('administrador', 'passageiro', 'gestorvoo', 'operadorcheckin'))
+    );
+
     static $validates_format_of = array(
         array('email', 'with' => '/^[^0-9][A-z0-9_]+([.][A-z0-9_]+)*[@][A-z0-9_]+([.][A-z0-9_]+)*[.][A-z]{2,4}$/',
             'mensagem' => 'Email inválido')
@@ -37,9 +42,7 @@ class User extends Model
         array('nif', 'only_integer' => true)
     );
 
-    static $validates_inclusion_of = array(
-        array('role', 'in' => array ('administrador', 'passageiro', 'gestorvoo', 'operadorcheckin'))
-    );
+
 
 
 }
