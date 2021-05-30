@@ -1,22 +1,19 @@
+
 <?php
 use ArmoredCore\WebObjects\Asset;
 use ArmoredCore\Facades\AssetBundler;
-use ArmoredCore\Facades\DebugRenderer;
 use ArmoredCore\WebObjects\URL;
-
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author"      content="Silvio Priem Mendes, PhD">
 
-    <title>Weblogic MVC</title>
+    <title>Weblogic MVC</title> <!-- ALTERAR  -->
 
     <?=AssetBundler::css()?>
 
@@ -44,10 +41,19 @@ use ArmoredCore\WebObjects\URL;
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
                 <li class="active"><a href="<?= URL::toRoute('home/index')?>">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a class="btn" href="<?= URL::toRoute('home/login')?>">SIGN IN / SIGN UP</a></li>
+                <li><a href="<?= URL::toRoute('home/start')?>">Dados Pessoais</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultar<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="active"><a href="<?=Url::toRoute('home/worksheet')?>">Voos</a></li>
+                        <li><a href="<?= Url::toRoute('devtools/restcontrollerform')?>">Históricos de passagens</a></li>
+                        <li><a href="<?= Url::toRoute('devtools/restcontrollerform')?>">Bilhetes</a></li>
+                    </ul>
+                </li>
+                <li><a class="btn" href="<?= URL::toRoute('home/login')?>">Sign out</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </div>
 <!-- /.navbar -->
+<header id="head" class="secondary"></header>
