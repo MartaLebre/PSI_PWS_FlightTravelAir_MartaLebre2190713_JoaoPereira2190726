@@ -27,18 +27,23 @@ Layout::includeLayout('adminheader') ?>
                                 <input readonly="true" type="text" value="<?=$aeroport->nome?>" name="nome" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>Localidade <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$aeroporto->localidade?>" name="localidade" class="form-control">
+                                <label>Morada <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$aeroport->morada?>" name="morada" class="form-control">
                             </div>
 
                             <div class="top-margin">
-                                <label>País <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$aeroporto->pais?>" name="pais" class="form-control">
+                                <label>NIF <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$aeroport->nif?>" name="nif" class="form-control">
                             </div>
 
                             <div class="top-margin">
                                 <label>Telefone <span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$aeroporto->telefone?>" name="telefone" class="form-control">
+                                <input readonly="true" type="text" value="<?=$aeroport->telefone?>" name="telefone" class="form-control">
+                            </div>
+
+                            <div class="top-margin">
+                                <label>Email <span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$aeroport->email?>" name="email" class="form-control">
                             </div>
                             <hr>
 
