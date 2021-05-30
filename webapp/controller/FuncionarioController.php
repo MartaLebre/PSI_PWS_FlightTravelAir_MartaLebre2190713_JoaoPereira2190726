@@ -28,7 +28,7 @@ class FuncionarioController extends BaseAuthController
         $funcionario = User::all(array('conditions' => array('role != ?', 'passageiro')));
 
 
-
+        /*TODO colocar as roles como deve ser !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         switch ($funcionario->role)
         {
             case 'administrador':
@@ -40,7 +40,7 @@ class FuncionarioController extends BaseAuthController
             case 'operadorcheckin':
                 $funcionario->role = 'Operador de Checkin';
                 break;
-        }
+        }*/
 
         return View::make('funcionario.index', ['funcionario' => $funcionario]);
     }
