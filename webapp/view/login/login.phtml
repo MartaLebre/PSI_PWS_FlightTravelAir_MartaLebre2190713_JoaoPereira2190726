@@ -24,10 +24,10 @@ Layout::includeLayout('header') ?>
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <h3 class="thin text-center">Sign in to your account</h3>
-                        <p class="text-center text-muted"><a href="<?=URL::toRoute('login/getregistration')?>">Register</a></p>
+                        <p class="text-center text-muted"><a href="<?=URL::toRoute('login/getregisto')?>">Register</a></p>
                         <hr>
 
-                        <form action="<?=URL::toRoute('login/dologin')?>" method="post">
+                        <form action="<?=URL::toRoute('login/login')?>" method="post">
                             <div class="top-margin">
                                 <label>Username/Email <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="username">

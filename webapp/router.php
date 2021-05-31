@@ -19,18 +19,18 @@ Router::get('home/start',	'HomeController/start');
 
 // ** LoginController **
 
-Router::get('login/getlogin',           'LoginController/getLoginForm');
-Router::get('login/getregistration',    'LoginController/getRegistrationForm');
-Router::post('login/doregistration',    'LoginController/doRegistration');
-Router::post('login/dologin',           'LoginController/doLogin');
+Router::get('login/getlogin',           'LoginController/LoginForm');
+Router::get('login/getregisto',    'LoginController/RegistoForm');
+Router::post('login/registo',    'LoginController/Registo');
+Router::post('login/login',           'LoginController/Login');
 Router::get('login/logout',             'LoginController/logout');
 
 
-//** AdminAppController **
+//** AdminController **
 
 Router::get('admin/index',           'AdminController/index');
 
-Router::resource('aeroporto', 'AeroportController');
+Router::resource('aeroport', 'AeroportController');
 Router::resource('funcionario', 'FuncionarioController');
 
 

@@ -6,17 +6,17 @@ use ArmoredCore\WebObjects\View;
 
 class LoginController
 {
-    public function getLogInForm()
+    public function LogInForm()
     {
         return View::make('login.login');
     }
 
-    public function getRegistrationForm()
+    public function RegistoForm()
     {
-        return View::make('login.registrationform');
+        return View::make('login.registoform');
     }
 
-    public function doLogin()
+    public function Login()
     {
         $username = Post::get('username');
         $password = Post::get('password');
@@ -50,7 +50,7 @@ class LoginController
             }
         }
     }
-    public function doRegistration()
+    public function Registo()
     {
         $nif = Post::get('nif');
         $userexists = User::find_by_nif($nif);
@@ -66,10 +66,10 @@ class LoginController
                 $user->save();
                 Redirect::toRoute('login/getlogin');
             } else {
-                Redirect::flashToRoute('login/getregistration', ['user' => $user]);
+                Redirect::flashToRoute('login/getregisto', ['user' => $user]);
             }
         } else {
-            Redirect::flashToRoute('login/getregistration', ['user' => $user]);
+            Redirect::flashToRoute('login/getregisto', ['user' => $user]);
         }
 
 
