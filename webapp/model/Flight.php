@@ -7,4 +7,9 @@ class Flight extends \ActiveRecord\Model
         array('precovoo'),
         array('idaeroporto'),
     );
+
+    static $has_many = array(
+        array('tickets'),
+        array('scales')
+    );
 }

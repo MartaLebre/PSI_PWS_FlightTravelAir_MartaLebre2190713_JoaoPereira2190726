@@ -4,7 +4,7 @@ use ArmoredCore\WebObjects\URL;
 use ArmoredCore\WebObjects\Debug;
 
 Layout::includeLayout('adminheader') ?>
-<?php $funcionario = Data::get('funcionario') ?>
+<?php $scale = Data::get('scale') ?>
 
 <!-- container -->
 <div class="container">
@@ -14,7 +14,7 @@ Layout::includeLayout('adminheader') ?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Informações do <?=$funcionario->role. " '" . $funcionario->nomeCompleto . "'"?></h1>
+                <h1 class="page-title">Informações da escala <?=$scale->id?></h1>
             </header>
 
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -22,31 +22,32 @@ Layout::includeLayout('adminheader') ?>
                     <div class="panel-body">
                         <hr>
 
-                        <form method="post" action="<?=Url::toRoute('funcionario/index')?>">
+                        <form method="post" action="<?=Url::toRoute('scale/index')?>">
                             <div class="top-margin">
-                                <label>Nome<span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?php echo $funcionario->nomeCompleto?>" name="descricao" class="form-control">
+                                <label>Data e Hora de origem<span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?php echo $scale->datahoraorigem?>" name="datahoraorigem" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>Função<span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$funcionario->role?>" name="role" class="form-control">
+                                <label>Data e Hora de destino<span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$scale->datahoradestino?>" name="datahoradestino" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>Morada<span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$funcionario->morada?>" name="morada" class="form-control">
+                                <label>Distancia<span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$scale->distancia?>" name="distancia" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>Email<span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$funcionario->email?>" name="email" class="form-control">
+                                <label>Aeroporto de origem<span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$scale->idaeroportoorigem?>" name="idaeroportoorigem" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>NIF<span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$funcionario->nif?>" name="nif" class="form-control">
+                                <label>Aeroporto de destino<span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$scale->idaeroportodestino?>" name="idaeroportodestino" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>Telefone<span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?=$funcionario->telefone?>" name="telefone" class="form-control">
+                                <label>Voo associado<span class="text-danger">*</span></label>
+                                <input readonly="true" type="text" value="<?=$scale->idvoo?>" name="idvoo" class="form-control">
                             </div>
+
                             <hr>
 
                             <div class="col-lg-4 text-right">

@@ -42,7 +42,7 @@ class User extends Model
         array('nif', 'only_integer' => true)
     );
 
-
-
-
+    static $has_many = array(
+        array('tickets')
+    );
 }

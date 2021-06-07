@@ -4,8 +4,8 @@ use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 
 Layout::includeLayout('adminheader') ?>
-<?php $funcionario = Data::get('funcionario') ?>
-<?php ErrMgr::attach($funcionario) ?>
+<?php $scale = Data::get('scale')?>
+<?php ErrMgr::attach($scale) ?>
 
 <!-- container -->
 <div class="container">
@@ -15,50 +15,56 @@ Layout::includeLayout('adminheader') ?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Alterar informações do <?=$funcionario->role. " '" . $funcionario->nomeCompleto . "'"?></h1>
+                <h1 class="page-title">Alterar informações da escala <?=$scale->id?></h1>
             </header>
 
 
             <div class="panel panel-default">
                 <div class="panel-body">
                     <hr>
-                    <form class="form-horizontal" method="post" action="<?=Url::toRoute('funcionario/update', $funcionario->id)?>">
+                    <form class="form-horizontal" method="post" action="<?=Url::toRoute('scale/update', $scale->id)?>">
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="nomeCompleto">Nome Completo<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="datahoraorigem">Data e Hora de Origem<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                                <input type="text" value="<?=$funcionario->nomeCompleto?>" class="form-control" required name="nome" placeholder="Introuza o seu nome completo">
-                                <?= ErrMgr::bind('nomeCompleto') ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="morada">Morada<span class="text-danger">*</span></label>
-                            <div class="col-sm-6">
-                                <input type="text" required value="<?=$funcionario->morada?>" class="form-control" name="morada" placeholder="Intrduza a sua morada">
-                                <?= ErrMgr::bind('morada') ?>
+                                <input type="text" value="<?=$scale->datahoraorigem?>" class="form-control" required name="datahoraorigem" placeholder="Introuza o seu nome completo">
+                                <?= ErrMgr::bind('datahoraorigem') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Email<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="datahoradestino">Data e Hora de Destino<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                                <input type="text" required value="<?=$funcionario->email?>" class="form-control" name="email" placeholder="Introduza o seu email">
-                                <?= ErrMgr::bind('email') ?>
+                                <input type="text" value="<?=$scale->datahoradestino?>" class="form-control" required name="datahoradestino" placeholder="Introuza o seu nome completo">
+                                <?= ErrMgr::bind('datahoradestino') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="nif">NIF<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="distancia">Distância<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                                <input type="text" required value="<?=$funcionario->nif?>" class="form-control" name="nif" placeholder="Introduza o seu nif">
-                                <?= ErrMgr::bind('nif') ?>
+                                <input type="text" required value="<?=$scale->distancia?>" class="form-control" name="distancia" placeholder="Introduza a distância da escala">
+                                <?= ErrMgr::bind('distancia') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="telefone">Telefone<span class="text-danger">*</span></label>
-                            <div class="col-sm-6">
-                                <input type="text" required value="<?=$funcionario->telefone?>" class="form-control" name="telefone" placeholder="Introduza o seu numero de telefone">
-                                <?= ErrMgr::bind('telefone') ?>
-                            </div>
+                            <label class="control-label col-sm-2" for="idaeroportoorigem">Aeroporto de Origem<span class="text-danger">*</span></label>
+                            <select name="idaeroportoorigem" class="form-control" value="<?=$scale->idaeroportoorigem?>">
+                                <option value="<?=Aeroport::find()->where(['id' => $scale->idaeroportoorigem]) ?>">teste</option>
+                            </select>
+                            <?= ErrMgr::bind('idaeroportoorigem') ?>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="idaeroportodestino">Aeroporto de Destino<span class="text-danger">*</span></label>
+                            <select name="idaeroportodestino" class="form-control" value="<?=$scale->idaeroportodestino?>">
+                                <option value="<?=Aeroport::find()->where(['id' => $scale->idaeroportodestino]) ?>">teste</option>
+                            </select>
+                            <?= ErrMgr::bind('idaeroportodestino') ?>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="idvoo">Voo associado<span class="text-danger">*</span></label>
+                            <select name="idvoo" class="form-control" value="<?=$scale->idvoo?>">
+                                <option value="<?=Flight::find()->where(['id' => $scale->idvoo]) ?>">teste</option>
+                            </select>
+                            <?= ErrMgr::bind('idvoo') ?>
                         </div>
                         <hr>
 

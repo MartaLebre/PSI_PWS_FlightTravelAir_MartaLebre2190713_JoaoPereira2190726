@@ -4,8 +4,8 @@ use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 
 Layout::includeLayout('adminheader') ?>
-<?php $funcionario = Data::get('funcionario') ?>
-<?php ErrMgr::attach($funcionario) ?>
+<?php $flight = Data::get('flight')?>
+<?php ErrMgr::attach($flight) ?>
 
 <!-- container -->
 <div class="container">
@@ -15,51 +15,31 @@ Layout::includeLayout('adminheader') ?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Alterar informações do <?=$funcionario->role. " '" . $funcionario->nomeCompleto . "'"?></h1>
+                <h1 class="page-title">Alterar informações do Voo <?=$flight->id?></h1>
             </header>
 
 
             <div class="panel panel-default">
                 <div class="panel-body">
                     <hr>
-                    <form class="form-horizontal" method="post" action="<?=Url::toRoute('funcionario/update', $funcionario->id)?>">
+                    <form class="form-horizontal" method="post" action="<?=Url::toRoute('flight/update', $flight->id)?>">
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="nomeCompleto">Nome Completo<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="precovoo">Preço de Voo<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                                <input type="text" value="<?=$funcionario->nomeCompleto?>" class="form-control" required name="nome" placeholder="Introuza o seu nome completo">
-                                <?= ErrMgr::bind('nomeCompleto') ?>
+                                <input type="text" value="<?=$flight->precovoo?>" class="form-control" required name="precovoo" placeholder="Introduza o preco do voo">
+                                <?= ErrMgr::bind('precovoo') ?>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="morada">Morada<span class="text-danger">*</span></label>
-                            <div class="col-sm-6">
-                                <input type="text" required value="<?=$funcionario->morada?>" class="form-control" name="morada" placeholder="Intrduza a sua morada">
-                                <?= ErrMgr::bind('morada') ?>
-                            </div>
+                            <label class="control-label col-sm-2" for="precovoo">Aeroporto associado<span class="text-danger">*</span></label>
+                            <select name="idaeroporto" class="form-control" value="<?=$flight->idaeroporto?>">
+                                <option value="<?=Aeroport::find()->where(['id' => $flight->idaeroporto]) ?>">teste</option>
+                            </select>
+                            <?= ErrMgr::bind('idaeroporto') ?>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Email<span class="text-danger">*</span></label>
-                            <div class="col-sm-6">
-                                <input type="text" required value="<?=$funcionario->email?>" class="form-control" name="email" placeholder="Introduza o seu email">
-                                <?= ErrMgr::bind('email') ?>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="nif">NIF<span class="text-danger">*</span></label>
-                            <div class="col-sm-6">
-                                <input type="text" required value="<?=$funcionario->nif?>" class="form-control" name="nif" placeholder="Introduza o seu nif">
-                                <?= ErrMgr::bind('nif') ?>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="telefone">Telefone<span class="text-danger">*</span></label>
-                            <div class="col-sm-6">
-                                <input type="text" required value="<?=$funcionario->telefone?>" class="form-control" name="telefone" placeholder="Introduza o seu numero de telefone">
-                                <?= ErrMgr::bind('telefone') ?>
-                            </div>
-                        </div>
+
                         <hr>
 
                         <div class="col-lg-4 text-right">

@@ -10,6 +10,9 @@ class Scale extends \ActiveRecord\Model
         array('idaeroportoorigem'),
         array('idaeroportodestino'),
         array('idvoo'),
+    );
 
+    static $has_many = array(
+        array('planescales')
     );
 }

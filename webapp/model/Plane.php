@@ -12,4 +12,9 @@ class Plane extends \ActiveRecord\Model
     static $validates_numericality_of = array(
         array('lotacao', 'only_integer' => true)
     );
+
+    static $has_many = array(
+        array('planescales'),
+        array('scales')
+    );
 }

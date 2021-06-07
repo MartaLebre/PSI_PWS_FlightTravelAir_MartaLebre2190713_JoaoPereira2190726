@@ -25,4 +25,9 @@ class Aeroport extends \ActiveRecord\Model
         array('telefone', 'only_integer' => true),
         array('nif', 'only_integer' => true)
     );
+
+    static $has_many = array(
+        array('flights'),
+        array('scales')
+    );
 }

@@ -4,8 +4,8 @@ use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 
 Layout::includeLayout('adminheader') ?>
-<?php $funcionario = Data::get('funcionario')?>
-<?php ErrMgr::attach($funcionario) ?>
+<?php $scale = Data::get('scale')?>
+<?php ErrMgr::attach($scale) ?>
 
 
 <!-- container -->
@@ -16,57 +16,49 @@ Layout::includeLayout('adminheader') ?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Registar Novo Funcionário</h1>
+                <h1 class="page-title">Registar Nova Escala</h1>
             </header>
 
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <hr>
-                        <form method="post" action="<?=Url::toRoute('funcionario/store')?>">
+                        <form method="post" action="<?=Url::toRoute('scale/store')?>">
                             <div class="top-margin">
-                                <label>Nome Completo<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->nomeCompleto?>" name="nomeCompleto" class="form-control" placeholder="Introduza o seu nome completo">
-                                <?= ErrMgr::bind('nomeCompleto') ?>
+                                <label>Data/Hora de Origem<span class="text-danger">*</span></label>
+                                <input type="text" autocomplete="off" value="<?=$scale->datahoraorigem?>" name="datahoraorigem" class="form-control" placeholder="Introduza o seu nome completo">
+                                <?= ErrMgr::bind('datahoraorigem') ?>
                             </div>
                             <div class="top-margin">
-                                <label>Função<span class="text-danger">*</span></label>
-                                <select name="role" class="form-control" value="<?=$funcionario->role?>">
-                                    <option value="administrador">administrador</option>
-                                    <option value="gestorvoo">gestor de voo</option>
-                                    <option value="operadorcheckin" selected="selected" >operador de checkin</option>
+                                <label>Data/Hora de Destino<span class="text-danger">*</span></label>
+                                <input type="text" autocomplete="off" value="<?=$scale->datahoradestino?>" name="datahoradestino" class="form-control" placeholder="Introduza o seu nome completo">
+                                <?= ErrMgr::bind('datahoradestino') ?>
+                            </div>
+                            <div>
+                                <label>Distância<span class="text-danger">*</span></label>
+                                <input type="text" autocomplete="off" value="<?=$scale->distancia?>" name="distancia" class="form-control" placeholder="Introduza a distância da escala">
+                                <?= ErrMgr::bind('distancia') ?>
+                            </div>
+                            <div class="top-margin">
+                                <label>Aeroporto de Origem<span class="text-danger">*</span></label>
+                                <select name="idaeroportoorigem" class="form-control" value="<?=$scale->idaeroportoorigem?>">
+                                    <option value="<?=Aeroport::find()->where(['id' => $scale->idaeroportoorigem]) ?>">teste</option>
                                 </select>
-                                <?= ErrMgr::bind('role') ?>
+                                <?= ErrMgr::bind('idaeroportoorigem') ?>
                             </div>
-                            <div>
-                                <label>Morada<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->morada?>" name="morada" class="form-control" placeholder="Introduza a sua morada">
-                                <?= ErrMgr::bind('morada') ?>
+                            <div class="top-margin">
+                                <label>Aeroporto de Destino<span class="text-danger">*</span></label>
+                                <select name="idaeroportodestino" class="form-control" value="<?=$scale->idaeroportodestino?>">
+                                    <option value="<?=Aeroport::find()->where(['id' => $scale->idaeroportodestino]) ?>">teste</option>
+                                </select>
+                                <?= ErrMgr::bind('idaeroportodestino') ?>
                             </div>
-                            <div>
-                                <label>Email<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->email?>" name="email" class="form-control" placeholder="Introduza o seu email">
-                                <?= ErrMgr::bind('email') ?>
-                            </div>
-                            <div>
-                                <label>NIF<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->nif?>" name="nif" class="form-control" placeholder="Introduza o seu nif">
-                                <?= ErrMgr::bind('nif') ?>
-                            </div>
-                            <div>
-                                <label>Telefone<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->telefone?>" name="telefone" class="form-control" placeholder="Introduza o seu numero de telefone">
-                                <?= ErrMgr::bind('telefone') ?>
-                            </div>
-                            <div>
-                                <label>Username<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->username?>" name="username" class="form-control" placeholder="Introduza o seu username">
-                                <?= ErrMgr::bind('username') ?>
-                            </div>
-                            <div>
-                                <label>Password<span class="text-danger">*</span></label>
-                                <input type="password" autocomplete="off" value="<?=$funcionario->password?>" name="password" class="form-control" placeholder="Introduza a sua password">
-                                <?= ErrMgr::bind('password') ?>
+                            <div class="top-margin">
+                                <label>Voo associado<span class="text-danger">*</span></label>
+                                <select name="idvoo" class="form-control" value="<?=$scale->idvoo?>">
+                                    <option value="<?=Flight::find()->where(['id' => $scale->idvoo]) ?>">teste</option>
+                                </select>
+                                <?= ErrMgr::bind('idvoo') ?>
                             </div>
 
                             <hr>
@@ -77,7 +69,7 @@ Layout::includeLayout('adminheader') ?>
                     </div>
                     </form>
                 </div>
-                <form method="post" action="<?=URL::toRoute('funcionario/index')?>">
+                <form method="post" action="<?=URL::toRoute('scale/index')?>">
                     <button class="btn btn-danger" type="submit">Cancelar</button>
                 </form>
             </div>

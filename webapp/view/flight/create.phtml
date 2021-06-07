@@ -32,41 +32,9 @@ Layout::includeLayout('adminheader') ?>
                             <div class="top-margin">
                                 <label>Aeroporto associado<span class="text-danger">*</span></label>
                                 <select name="idaeroporto" class="form-control" value="<?=$flight->idaeroporto?>">
-                                    <option value="administrador">administrador</option>
-                                    <option value="gestorvoo">gestor de voo</option>
-                                    <option value="operadorcheckin" selected="selected" >operador de checkin</option>
+                                    <option value="<?=Aeroport::find()->where(['id' => $flight->idaeroporto]) ?>">teste</option>
                                 </select>
-                                <?= ErrMgr::bind('role') ?>
-                            </div>
-                            <div>
-                                <label>Morada<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->morada?>" name="morada" class="form-control" placeholder="Introduza a sua morada">
-                                <?= ErrMgr::bind('morada') ?>
-                            </div>
-                            <div>
-                                <label>Email<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->email?>" name="email" class="form-control" placeholder="Introduza o seu email">
-                                <?= ErrMgr::bind('email') ?>
-                            </div>
-                            <div>
-                                <label>NIF<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->nif?>" name="nif" class="form-control" placeholder="Introduza o seu nif">
-                                <?= ErrMgr::bind('nif') ?>
-                            </div>
-                            <div>
-                                <label>Telefone<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->telefone?>" name="telefone" class="form-control" placeholder="Introduza o seu numero de telefone">
-                                <?= ErrMgr::bind('telefone') ?>
-                            </div>
-                            <div>
-                                <label>Username<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->username?>" name="username" class="form-control" placeholder="Introduza o seu username">
-                                <?= ErrMgr::bind('username') ?>
-                            </div>
-                            <div>
-                                <label>Password<span class="text-danger">*</span></label>
-                                <input type="password" autocomplete="off" value="<?=$funcionario->password?>" name="password" class="form-control" placeholder="Introduza a sua password">
-                                <?= ErrMgr::bind('password') ?>
+                                <?= ErrMgr::bind('idaeroporto') ?>
                             </div>
 
                             <hr>

@@ -115,4 +115,5 @@ class FlightController extends BaseController implements ResourceControllerInter
         $flight->delete();
         Redirect::toRoute('flight/index');
     }
+
 }
