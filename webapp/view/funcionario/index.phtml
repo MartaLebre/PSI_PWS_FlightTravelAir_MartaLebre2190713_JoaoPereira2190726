@@ -21,7 +21,7 @@ Layout::includeLayout('adminheader') ?>
                 <?php foreach ($funcionarios as $funcionario) { ?>
                     <tr>
                         <td><?=$funcionario->role?></td>
-                        <td><?=$funcionario->nomeCompleto?></td>
+                        <td><?=$funcionario->nomecompleto?></td>
                         <td><?=$funcionario->telefone?></td>
                         <td>
                             <a href="<?=Url::toRoute('funcionario/show', $funcionario->id)?>" class="btn btn-info" role="button">Ver detalhes</a>

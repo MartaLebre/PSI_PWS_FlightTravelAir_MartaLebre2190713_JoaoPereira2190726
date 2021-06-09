@@ -24,7 +24,7 @@ class User extends Model
         array('telefone', 'is' => 9),
         array('username', 'maximum' => 30),
         array('password', 'maximum' => 30),
-        array('role', 'maximum' => 13)
+        array('role', 'maximum' => 30)
     );
 
 

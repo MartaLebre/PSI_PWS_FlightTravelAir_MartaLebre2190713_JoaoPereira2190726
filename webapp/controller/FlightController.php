@@ -23,8 +23,8 @@ class FlightController extends BaseController implements ResourceControllerInter
      */
     public function index()
     {
-        $flights = Flight::all();
-        return View::make('flight.index', ['flights' => $flights]);
+        $flight = Flight::all();
+        return View::make('flight.index', ['flight' => $flight]);
     }
 
 

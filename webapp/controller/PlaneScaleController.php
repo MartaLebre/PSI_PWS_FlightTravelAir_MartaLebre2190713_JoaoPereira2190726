@@ -23,8 +23,8 @@ class PlaneScaleController extends BaseController implements ResourceControllerI
      */
     public function index()
     {
-        $planescales = PlaneScale::all();
-        return View::make('planescale.index', ['planescales' => $planescales]);
+        $planescale = PlaneScale::all();
+        return View::make('planescale.index', ['planescale' => $planescale]);
     }
 
 

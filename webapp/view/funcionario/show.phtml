@@ -14,7 +14,7 @@ Layout::includeLayout('adminheader') ?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Informações do <?=$funcionario->role. " '" . $funcionario->nomeCompleto . "'"?></h1>
+                <h1 class="page-title">Informações do <?=$funcionario->role. " '" . $funcionario->nomecompleto . "'"?></h1>
             </header>
 
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -25,7 +25,7 @@ Layout::includeLayout('adminheader') ?>
                         <form method="post" action="<?=Url::toRoute('funcionario/index')?>">
                             <div class="top-margin">
                                 <label>Nome<span class="text-danger">*</span></label>
-                                <input readonly="true" type="text" value="<?php echo $funcionario->nomeCompleto?>" name="descricao" class="form-control">
+                                <input readonly="true" type="text" value="<?php echo $funcionario->nomecompleto?>" name="descricao" class="form-control">
                             </div>
                             <div class="top-margin">
                                 <label>Função<span class="text-danger">*</span></label>

@@ -23,8 +23,8 @@ class ScaleController extends BaseController implements ResourceControllerInterf
      */
     public function index()
     {
-        $scales = Scale::all();
-        return View::make('scale.index', ['scales' => $scales]);
+        $scale = Scale::all();
+        return View::make('scale.index', ['scale' => $scale]);
     }
 
 

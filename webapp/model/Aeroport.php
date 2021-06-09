@@ -1,7 +1,7 @@
 <?php
+use ActiveRecord\Model;
 
-
-class Aeroport extends \ActiveRecord\Model
+class Aeroport extends Model
 {
     static $validates_presence_of = array(
         array('nome'),
@@ -12,8 +12,11 @@ class Aeroport extends \ActiveRecord\Model
     );
 
     static $validates_size_of = array(
+        array('nome', 'maximum' => 80),
+        array('morada', 'maximum' => 100),
         array('nif', 'maximum' => 9),
-        array('telefone', 'is' => 9),
+        array('telefone', 'maximum' => 9),
+        array('email', 'maximum' => 60),
     );
 
     static $validates_format_of = array(

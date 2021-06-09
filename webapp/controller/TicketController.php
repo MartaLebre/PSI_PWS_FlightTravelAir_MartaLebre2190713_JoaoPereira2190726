@@ -23,8 +23,8 @@ class TicketController extends BaseController implements ResourceControllerInter
      */
     public function index()
     {
-        $tickets = Ticket::all();
-        return View::make('ticket.index', ['tickets' => $tickets]);
+        $ticket = Ticket::all();
+        return View::make('ticket.index', ['ticket' => $ticket]);
     }
 
 

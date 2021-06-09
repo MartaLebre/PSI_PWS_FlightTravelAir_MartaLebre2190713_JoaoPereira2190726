@@ -29,10 +29,25 @@ Router::get('login/logout',             'LoginController/logout');
 //** AdminController **
 
 Router::get('admin/index',           'AdminController/index');
-
 Router::resource('aeroport', 'AeroportController');
 Router::resource('funcionario', 'FuncionarioController');
 
+
+//** UserController **
+Router::resource('user',        'UserController');
+
+
+//** PassageiroController **
+Router::get('passageiro/index',   'PassageiroController/index');
+
+
+//** OperadorCheckinController **
+Router::get('operadorcheckin/index',    'OperadorCheckinController/index');
+
+//** GestorVooController **
+Router::resource('gestorvoo',    'GestorVooController');
+Router::resource('flight',    'FlightController');
+Router::resource('plane',    'PlaneController');
 
 
 

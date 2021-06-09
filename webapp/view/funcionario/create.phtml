@@ -26,8 +26,8 @@ Layout::includeLayout('adminheader') ?>
                         <form method="post" action="<?=Url::toRoute('funcionario/store')?>">
                             <div class="top-margin">
                                 <label>Nome Completo<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$funcionario->nomeCompleto?>" name="nomeCompleto" class="form-control" placeholder="Introduza o seu nome completo">
-                                <?= ErrMgr::bind('nomeCompleto') ?>
+                                <input type="text" autocomplete="off" value="<?=$funcionario->nomecompleto?>" name="nomecompleto" class="form-control" placeholder="Introduza o seu nome completo">
+                                <?= ErrMgr::bind('nomecompleto') ?>
                             </div>
                             <div class="top-margin">
                                 <label>Função<span class="text-danger">*</span></label>

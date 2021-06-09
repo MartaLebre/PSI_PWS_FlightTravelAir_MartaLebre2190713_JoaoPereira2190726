@@ -23,8 +23,8 @@ class PlaneController extends BaseController implements ResourceControllerInterf
      */
     public function index()
     {
-        $planes = Plane::all();
-        return View::make('plane.index', ['planes' => $planes]);
+        $plane = Plane::all();
+        return View::make('plane.index', ['plane' => $plane]);
     }
 
 

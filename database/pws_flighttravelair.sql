@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `tickets` (
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nomeCompleto` varchar(255) DEFAULT NULL,
+  `nomecompleto` varchar(255) DEFAULT NULL,
   `morada` varchar(45) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `telefone` int DEFAULT NULL,

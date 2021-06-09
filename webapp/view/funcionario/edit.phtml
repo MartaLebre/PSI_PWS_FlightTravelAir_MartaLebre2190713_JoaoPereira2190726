@@ -15,7 +15,7 @@ Layout::includeLayout('adminheader') ?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Alterar informações do <?=$funcionario->role. " '" . $funcionario->nomeCompleto . "'"?></h1>
+                <h1 class="page-title">Alterar informações do <?=$funcionario->role. " '" . $funcionario->nomecompleto . "'"?></h1>
             </header>
 
 
@@ -25,10 +25,10 @@ Layout::includeLayout('adminheader') ?>
                     <form class="form-horizontal" method="post" action="<?=Url::toRoute('funcionario/update', $funcionario->id)?>">
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="nomeCompleto">Nome Completo<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="nomecompleto">Nome Completo<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                                <input type="text" value="<?=$funcionario->nomeCompleto?>" class="form-control" required name="nome" placeholder="Introuza o seu nome completo">
-                                <?= ErrMgr::bind('nomeCompleto') ?>
+                                <input type="text" value="<?=$funcionario->nomecompleto?>" class="form-control" required name="nomecompleto" placeholder="Introuza o seu nome completo">
+                                <?= ErrMgr::bind('nomecompleto') ?>
                             </div>
                         </div>
 

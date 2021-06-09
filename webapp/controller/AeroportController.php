@@ -23,8 +23,8 @@ class AeroportController extends BaseController implements ResourceControllerInt
      */
     public function index()
     {
-        $aeroports = Aeroport::all();
-        return View::make('aeroport.index', ['aeroports' => $aeroports]);
+        $aeroport = Aeroport::all();
+        return View::make('aeroport.index', ['aeroport' => $aeroport]);
     }
 
 
