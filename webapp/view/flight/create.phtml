@@ -5,6 +5,7 @@ use ArmoredCore\WebObjects\URL;
 
 Layout::includeLayout('gestorVooheader') ?>
 <?php $flight = Data::get('flight')?>
+<?php $id = Data::get('id')?>
 <?php ErrMgr::attach($flight) ?>
 
 
@@ -31,8 +32,10 @@ Layout::includeLayout('gestorVooheader') ?>
                             </div>
                             <div class="top-margin">
                                 <label>Aeroporto associado<span class="text-danger">*</span></label>
-                                <select name="idaeroporto" class="form-control" value="<?=$flight->idaeroporto?>">
-                                    <option value="<?=Aeroport::find()->where(['id' => $flight->idaeroporto]) ?>">teste</option>
+                                <select name="<?=$id?>" class="form-control" value="<?=$flight->idaeroporto?>">
+
+                                    <option value=""><?=$id?></option>
+
                                 </select>
                                 <?= ErrMgr::bind('idaeroporto') ?>
                             </div>

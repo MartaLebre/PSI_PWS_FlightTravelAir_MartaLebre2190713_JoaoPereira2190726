@@ -41,16 +41,17 @@ class FlightController extends BaseController implements ResourceControllerInter
     {
         $aeroport = Aeroport::all();
 
-        $id = [];
 
         foreach ($aeroport as $a)
         {
-            $id = [$a->id];
+            $id[] = [
+                'id' => $a->id,
+                'nome' =>$a->nome,
+            ];
+
         }
-        var_dump($id);
-
-
-        return View::make('flight.create');
+        print_r(json_encode($id));
+        return View::make('flight.create', ['id' => json_encode($id)]);
     }
 
 
