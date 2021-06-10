@@ -45,6 +45,15 @@ class LoginController
                     Redirect::toRoute('admin/index');
                     break;
 
+                case 'operadorcheckin':
+                    Redirect::toRoute('operadorcheckin/index');
+
+                case 'gestorvoo':
+                    Redirect::toRoute('gestorvoo/index');
+
+                case 'passageiro':
+                    Redirect::toRoute('passageiro/index');
+
                 default:
                     Redirect::toRoute('login/getlogin');
             }

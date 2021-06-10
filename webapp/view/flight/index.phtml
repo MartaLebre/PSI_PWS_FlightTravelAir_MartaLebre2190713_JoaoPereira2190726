@@ -22,6 +22,7 @@ Layout::includeLayout('gestorVooheader') ?>
                     <tr>
                         <td><?=$flight->precovoo?></td>
                         <td><?=$flight->idaeroporto?></td>
+
                         <td>
                             <a href="<?=Url::toRoute('flight/show', $flight->id)?>" class="btn btn-info" role="button">Ver detalhes</a>
                             <a href="<?=Url::toRoute('flight/edit', $flight->id)?>" class="btn btn-warning" role="button">Editar</a>

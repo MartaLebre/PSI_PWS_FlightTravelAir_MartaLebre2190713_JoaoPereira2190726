@@ -30,7 +30,7 @@ class Aeroport extends Model
     );
 
     static $has_many = array(
-        array('flights'),
-        array('scales')
+        array('flight'),
+        array('scale')
     );
 }

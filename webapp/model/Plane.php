@@ -14,7 +14,7 @@ class Plane extends \ActiveRecord\Model
     );
 
     static $has_many = array(
-        array('planescales'),
-        array('scales')
+        array('planescale'),
+        array('scale')
     );
 }

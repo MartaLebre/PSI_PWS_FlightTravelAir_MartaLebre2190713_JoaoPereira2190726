@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `planescales` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `scales`
+-- Estrutura da tabela `scale`
 --
 
 DROP TABLE IF EXISTS `scales`;
@@ -166,7 +166,7 @@ ALTER TABLE `planescales`
   ADD CONSTRAINT `fk_PlaneScales_Scales1` FOREIGN KEY (`idEscala`) REFERENCES `scales` (`id`);
 
 --
--- Limitadores para a tabela `scales`
+-- Limitadores para a tabela `scale`
 --
 ALTER TABLE `scales`
   ADD CONSTRAINT `fk_Scales_Aeroports1` FOREIGN KEY (`idAeroportoOrigem`) REFERENCES `aeroports` (`id`),

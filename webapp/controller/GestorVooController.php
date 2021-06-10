@@ -7,7 +7,7 @@ class GestorVooController extends BaseAuthController
     {
         $this->authFilterByRole('gestorvoo');
 
-        User::all(array('conditions' => array('role != ?', 'passageiro')));
+        //User::all(array('conditions' => array('role != ?', 'passageiro')));
 
         return \ArmoredCore\WebObjects\View::make('gestorvoo.index');
     }

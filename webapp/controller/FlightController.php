@@ -27,12 +27,29 @@ class FlightController extends BaseController implements ResourceControllerInter
         return View::make('flight.index', ['flight' => $flight]);
     }
 
+    public function indexoperadorcheckin()
+    {
+        $flight = Flight::all();
+        return View::make('flight.indexoperadorcheckin', ['flight' => $flight]);
+    }
+
 
     /**
      * Returns a view with a form to create a new record
      */
     public function create()
     {
+        $aeroport = Aeroport::all();
+
+        $id = [];
+
+        foreach ($aeroport as $a)
+        {
+            $id = [$a->id];
+        }
+        var_dump($id);
+
+
         return View::make('flight.create');
     }
 
@@ -45,6 +62,7 @@ class FlightController extends BaseController implements ResourceControllerInter
         //create new resource (activerecord/model) instance with data from POST
         //your form name fields must match the ones of the table fields
         $flight = new Flight(Post::getAll());
+
 
         if($flight->is_valid()){
             $flight->save();

@@ -43,6 +43,6 @@ class User extends Model
     );
 
     static $has_many = array(
-        array('tickets')
+        array('ticket')
     );
 }

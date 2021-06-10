@@ -43,11 +43,13 @@ Router::get('passageiro/index',   'PassageiroController/index');
 
 //** OperadorCheckinController **
 Router::get('operadorcheckin/index',    'OperadorCheckinController/index');
+Router::resource('flight', 'FlightController');
 
 //** GestorVooController **
 Router::resource('gestorvoo',    'GestorVooController');
 Router::resource('flight',    'FlightController');
 Router::resource('plane',    'PlaneController');
+Router::resource('scale', 'ScaleController');
 
 
 

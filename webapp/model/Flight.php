@@ -9,7 +9,7 @@ class Flight extends \ActiveRecord\Model
     );
 
     static $has_many = array(
-        array('tickets'),
-        array('scales')
+        array('ticket'),
+        array('scale')
     );
 }
