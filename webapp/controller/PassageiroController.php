@@ -9,7 +9,7 @@ class PassageiroController extends BaseAuthController
 {
     public function index()
     {
-        $this->loginFilterByRole('passageiro');
+        $this->authFilterByRole('passageiro');
         $user = User::all();
         return View::make('passageiro.index',['user'=>$user]);
     }

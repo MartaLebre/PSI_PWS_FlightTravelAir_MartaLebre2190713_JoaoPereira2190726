@@ -13,7 +13,7 @@ use ArmoredCore\WebObjects\URL;
     <meta name="description" content="">
     <meta name="author"      content="Silvio Priem Mendes, PhD">
 
-    <title>Weblogic MVC</title> <!-- ALTERAR  -->
+    <title>Flight Travel Air</title> <!-- ALTERAR  -->
 
     <?=AssetBundler::css()?>
 
@@ -36,12 +36,12 @@ use ArmoredCore\WebObjects\URL;
         <div class="navbar-header">
             <!-- Button for smallest screens -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand" href="<?= URL::toRoute('home/index')?>"><img src="<?= Asset::image('logo.png')?>" alt="WEBlogic MVC"></a>
+            <a class="navbar-brand" href="<?= URL::toRoute('passageiro/index')?>">Flight Travel Air</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
-                <li class="active"><a href="<?= URL::toRoute('home/index')?>">Home</a></li>
-                <li><a href="<?= URL::toRoute('home/start')?>">Dados Pessoais</a></li>
+                <li class="active"><a href="<?= URL::toRoute('passageiro/index')?>">Home</a></li>
+                <li><a href="<?= URL::toRoute('passageiro/show')?>">Dados Pessoais</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultar<b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -50,7 +50,7 @@ use ArmoredCore\WebObjects\URL;
                         <li><a href="<?= Url::toRoute('devtools/restcontrollerform')?>">Bilhetes</a></li>
                     </ul>
                 </li>
-                <li><a class="btn" href="<?= URL::toRoute('home/login')?>">Sign out</a></li>
+                <li><a class="btn" href="<?= URL::toRoute('login/logout')?>">Sign out</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

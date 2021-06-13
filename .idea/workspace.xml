@@ -20,34 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7001a1a5-552a-4369-8b2d-3d517ff80e18" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/webapp/controller/GestorVooController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/controller/OperadorCheckinController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/controller/PassageiroController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/view/gestorvoo/index.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/view/operadorcheckin/index.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/view/passageiro/index.phtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/view/passageiro/show.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/pws_flighttravelair.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/pws_flighttravelair.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/controller/AeroportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/AeroportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/controller/FlightController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/FlightController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/controller/FuncionarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/FuncionarioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/controller/PlaneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/PlaneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/controller/PlaneScaleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/PlaneScaleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/controller/ScaleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/ScaleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/controller/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/model/Aeroport.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Aeroport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/bg_header.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg_header.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/controller/PassageiroController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/PassageiroController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/flight/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/flight/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/funcionario/create.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/funcionario/create.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/funcionario/edit.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/funcionario/edit.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/funcionario/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/funcionario/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/funcionario/show.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/funcionario/show.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/admin/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/admin/index.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/gestorvoo/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/gestorvoo/index.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/view/home/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/home/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/login/registoform.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/login/registoform.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/plane/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/plane/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/scales/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/scales/index.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/layout/adminheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/adminheader.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/layout/footer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/footer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/layout/gestorVooheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/gestorVooheader.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/layout/header.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/header.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/layout/indexheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/indexheader.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/layout/operadorCheckinheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/operadorCheckinheader.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/layout/passageiroheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/passageiroheader.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/login/login.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/login/login.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/operadorcheckin/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/operadorcheckin/index.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/passageiro/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/passageiro/index.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,19 +232,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\weblogicmvc\webapp\controller" />
-      <recent name="C:\wamp64\www\weblogicmvc\database" />
-      <recent name="C:\wamp64\www\weblogicmvc\framework\WebObjects" />
-      <recent name="C:\wamp64\www\weblogicmvc\framework\" />
-      <recent name="C:\wamp64\www\weblogicmvc\framework\ArmoredCore" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\PWS_FlightTravelAir\webapp\view" />
       <recent name="C:\wamp64\www\PWS_FlightTravelAir\webapp\view\layout" />
       <recent name="C:\wamp64\www\PWS_FlightTravelAir\webapp\model" />
       <recent name="C:\wamp64\www\weblogicmvc\wlstudio\model" />
       <recent name="C:\wamp64\www\weblogicmvc\wlstudio\controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\weblogicmvc\public\img" />
+      <recent name="C:\wamp64\www\weblogicmvc\webapp\controller" />
+      <recent name="C:\wamp64\www\weblogicmvc\database" />
+      <recent name="C:\wamp64\www\weblogicmvc\framework\WebObjects" />
+      <recent name="C:\wamp64\www\weblogicmvc\framework\" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.weblogicmvc">
@@ -317,6 +308,7 @@
       <workItem from="1622381533807" duration="1471000" />
       <workItem from="1623081529858" duration="9933000" />
       <workItem from="1623249470153" duration="8831000" />
+      <workItem from="1623590914179" duration="4741000" />
     </task>
     <servers />
   </component>
