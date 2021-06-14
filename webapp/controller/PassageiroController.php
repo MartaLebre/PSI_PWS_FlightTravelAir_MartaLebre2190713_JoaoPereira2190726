@@ -37,6 +37,17 @@ class PassageiroController extends BaseAuthController
     {
         $user = User::find($id);
 
+        $authmgr = new AuthManager();
+
+        $authmgr->setAuthData($user->id, $user->role);
+
+        //var dump
+        
+        \Tracy\Debugger::dump($authmgr);
+
+        $role = $user->role;
+
+
         //\Tracy\Debugger::barDump($user);
 
         if (is_null($user)) {
