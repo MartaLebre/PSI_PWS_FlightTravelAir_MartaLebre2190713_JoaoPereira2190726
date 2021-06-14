@@ -3,9 +3,11 @@ use ArmoredCore\WebObjects\ErrMgr;
 use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 
-Layout::includeLayout('gestorVooheader') ?>
-<?php $scale = Data::get('scale')?>
-<?php ErrMgr::attach($scale) ?>
+Layout::includeLayout('gestorVooheader');
+$scale = Data::get('scale');
+$aeroports = Data::get('aeroports');
+$flights = Data::get('flights');
+ErrMgr::attach($scale) ?>
 
 <!-- container -->
 <div class="container">
@@ -27,14 +29,14 @@ Layout::includeLayout('gestorVooheader') ?>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="datahoraorigem">Data e Hora de Origem<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                                <input type="text" value="<?=$scale->datahoraorigem?>" class="form-control" required name="datahoraorigem" placeholder="Introuza o seu nome completo">
+                                <input type="datetime-local" value="<?=$scale->datahoraorigem?>" class="form-control" required name="datahoraorigem" placeholder="Introuza o seu nome completo">
                                 <?= ErrMgr::bind('datahoraorigem') ?>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="datahoradestino">Data e Hora de Destino<span class="text-danger">*</span></label>
                             <div class="col-sm-6">
-                                <input type="text" value="<?=$scale->datahoradestino?>" class="form-control" required name="datahoradestino" placeholder="Introuza o seu nome completo">
+                                <input type="datetime-local" value="<?=$scale->datahoradestino?>" class="form-control" required name="datahoradestino" placeholder="Introuza o seu nome completo">
                                 <?= ErrMgr::bind('datahoradestino') ?>
                             </div>
                         </div>
@@ -47,23 +49,35 @@ Layout::includeLayout('gestorVooheader') ?>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="idaeroportoorigem">Aeroporto de Origem<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
                             <select name="idaeroportoorigem" class="form-control" value="<?=$scale->idaeroportoorigem?>">
-                                <option value="<?=Aeroport::find()->where(['id' => $scale->idaeroportoorigem]) ?>">teste</option>
+                                <?php foreach ($aeroports as $aeroport){ ?>
+                                    <option value="<?=$aeroport->id?>"><?=$aeroport->nome?></option>
+                                <?php } ?>
                             </select>
+                            </div>
                             <?= ErrMgr::bind('idaeroportoorigem') ?>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="idaeroportodestino">Aeroporto de Destino<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
                             <select name="idaeroportodestino" class="form-control" value="<?=$scale->idaeroportodestino?>">
-                                <option value="<?=Aeroport::find()->where(['id' => $scale->idaeroportodestino]) ?>">teste</option>
+                                <?php foreach ($aeroports as $aeroport){ ?>
+                                    <option value="<?=$aeroport->id?>"><?=$aeroport->nome?></option>
+                                <?php } ?>
                             </select>
+                            </div>
                             <?= ErrMgr::bind('idaeroportodestino') ?>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="idvoo">Voo associado<span class="text-danger">*</span></label>
+                            <div class="col-sm-6">
                             <select name="idvoo" class="form-control" value="<?=$scale->idvoo?>">
-                                <option value="<?=Flight::find()->where(['id' => $scale->idvoo]) ?>">teste</option>
+                                <?php foreach ($flights as $flight){ ?>
+                                    <option value="<?=$flight->id?>"><?=$flight->id?></option>
+                                <?php } ?>
                             </select>
+                            </div>
                             <?= ErrMgr::bind('idvoo') ?>
                         </div>
                         <hr>

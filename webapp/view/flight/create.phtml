@@ -30,15 +30,6 @@ Layout::includeLayout('gestorVooheader') ?>
                                 <input type="text" autocomplete="off" value="<?=$flight->precovoo?>" name="precovoo" class="form-control" placeholder="Introduza o preço de voo">
                                 <?= ErrMgr::bind('precovoo') ?>
                             </div>
-                            <div class="top-margin">
-                                <label>Aeroporto associado<span class="text-danger">*</span></label>
-                                <select name="<?=$id?>" class="form-control" value="<?=$flight->idaeroporto?>">
-
-                                    <option value=""><?=$id?></option>
-
-                                </select>
-                                <?= ErrMgr::bind('idaeroporto') ?>
-                            </div>
 
                             <hr>
 

@@ -33,7 +33,10 @@ class ScaleController extends BaseController implements ResourceControllerInterf
      */
     public function create()
     {
-        return View::make('scale.create');
+        $aeroports = Aeroport::all();
+        $flights = Flight::all();
+        return View::make('scale.create', ['aeroports' => $aeroports, 'flights' => $flights]);
+
     }
 
 
@@ -81,7 +84,9 @@ class ScaleController extends BaseController implements ResourceControllerInterf
         if (is_null($scale)) {
             //TODO redirect to standard error page
         } else {
-            return View::make('scale.edit', ['scale' => $scale]);
+            $aeroports = Aeroport::all();
+            $flights = Flight::all();
+            return View::make('scale.edit', ['scale' => $scale, 'aeroports' => $aeroports, 'flights' => $flights]);
         }
     }
 

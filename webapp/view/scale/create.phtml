@@ -3,9 +3,11 @@ use ArmoredCore\WebObjects\ErrMgr;
 use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 
-Layout::includeLayout('gestorVooheader') ?>
-<?php $scale = Data::get('scale')?>
-<?php ErrMgr::attach($scale) ?>
+Layout::includeLayout('gestorVooheader');
+$scale = Data::get('scale');
+$aeroports = Data::get('aeroports');
+$flights = Data::get('flights');
+ErrMgr::attach($scale) ?>
 
 
 <!-- container -->
@@ -26,12 +28,12 @@ Layout::includeLayout('gestorVooheader') ?>
                         <form method="post" action="<?=Url::toRoute('scale/store')?>">
                             <div class="top-margin">
                                 <label>Data/Hora de Origem<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$scale->datahoraorigem?>" name="datahoraorigem" class="form-control" placeholder="Introduza o seu nome completo">
+                                <input type="datetime-local" autocomplete="off" value="<?=$scale->datahoraorigem?>" name="datahoraorigem" class="form-control" placeholder="Introduza o seu nome completo">
                                 <?= ErrMgr::bind('datahoraorigem') ?>
                             </div>
                             <div class="top-margin">
                                 <label>Data/Hora de Destino<span class="text-danger">*</span></label>
-                                <input type="text" autocomplete="off" value="<?=$scale->datahoradestino?>" name="datahoradestino" class="form-control" placeholder="Introduza o seu nome completo">
+                                <input type="datetime-local" autocomplete="off" value="<?=$scale->datahoradestino?>" name="datahoradestino" class="form-control" placeholder="Introduza o seu nome completo">
                                 <?= ErrMgr::bind('datahoradestino') ?>
                             </div>
                             <div>
@@ -42,21 +44,27 @@ Layout::includeLayout('gestorVooheader') ?>
                             <div class="top-margin">
                                 <label>Aeroporto de Origem<span class="text-danger">*</span></label>
                                 <select name="idaeroportoorigem" class="form-control" value="<?=$scale->idaeroportoorigem?>">
-                                    <option value="<?=Aeroport::find()->where(['id' => $scale->idaeroportoorigem]) ?>">teste</option>
+                                    <?php foreach ($aeroports as $aeroport){ ?>
+                                    <option value="<?=$aeroport->id?>"><?=$aeroport->nome?></option>
+                                    <?php } ?>
                                 </select>
                                 <?= ErrMgr::bind('idaeroportoorigem') ?>
                             </div>
                             <div class="top-margin">
                                 <label>Aeroporto de Destino<span class="text-danger">*</span></label>
                                 <select name="idaeroportodestino" class="form-control" value="<?=$scale->idaeroportodestino?>">
-                                    <option value="<?=Aeroport::find()->where(['id' => $scale->idaeroportodestino]) ?>">teste</option>
+                                    <?php foreach ($aeroports as $aeroport){ ?>
+                                        <option value="<?=$aeroport->id?>"><?=$aeroport->nome?></option>
+                                    <?php } ?>
                                 </select>
                                 <?= ErrMgr::bind('idaeroportodestino') ?>
                             </div>
                             <div class="top-margin">
                                 <label>Voo associado<span class="text-danger">*</span></label>
                                 <select name="idvoo" class="form-control" value="<?=$scale->idvoo?>">
-                                    <option value="<?=Flight::find()->where(['id' => $scale->idvoo]) ?>">teste</option>
+                                    <?php foreach ($flights as $flight){ ?>
+                                        <option value="<?=$flight->id?>"><?=$flight->id?></option>
+                                    <?php } ?>
                                 </select>
                                 <?= ErrMgr::bind('idvoo') ?>
                             </div>
