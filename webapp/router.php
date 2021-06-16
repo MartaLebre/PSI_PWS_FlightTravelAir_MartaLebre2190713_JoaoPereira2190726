@@ -45,7 +45,9 @@ Router::get('passageiro/show', 'PassageiroController/show');
 
 //** OperadorCheckinController **
 Router::get('operadorcheckin/index',    'OperadorCheckinController/index');
+Router::get('operadorcheckin/checkin',    'OperadorCheckinController/checkin');
 Router::resource('flight', 'FlightController');
+Router::resource('ticket', 'TicketController');
 
 //** GestorVooController **
 Router::resource('gestorvoo',    'GestorVooController');

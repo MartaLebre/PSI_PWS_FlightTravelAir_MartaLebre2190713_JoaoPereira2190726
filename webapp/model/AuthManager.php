@@ -27,7 +27,7 @@ class AuthManager
         }
     }
 
-    static public function getLoggedId()
+    public function getLoggedId()
     {
         if(self::isUserLoggedIn())
         {

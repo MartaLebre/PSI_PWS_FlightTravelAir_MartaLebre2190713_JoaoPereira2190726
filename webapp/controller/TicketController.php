@@ -33,7 +33,9 @@ class TicketController extends BaseController implements ResourceControllerInter
      */
     public function create()
     {
-        return View::make('ticket.create');
+        $flights = Flight::all();
+        $users = User::all(array('conditions' => array('role == ?', 'passageiro')));
+        return View::make('ticket.create', ['flights' => $flights, 'users' => $users]);
     }
 
 
@@ -81,7 +83,9 @@ class TicketController extends BaseController implements ResourceControllerInter
         if (is_null($ticket)) {
             //TODO redirect to standard error page
         } else {
-            return View::make('ticket.edit', ['ticket' => $ticket]);
+            $flights = Flight::all();
+            $users = User::all(array('conditions' => array('role = ?', 'passageiro')));
+            return View::make('ticket.edit', ['ticket' => $ticket, 'flights' => $flights, 'users' => $users]);
         }
     }
 
@@ -98,7 +102,7 @@ class TicketController extends BaseController implements ResourceControllerInter
 
         if($ticket->is_valid()){
             $ticket->save();
-            Redirect::toRoute('ticket/index');
+            Redirect::toRoute('operadorcheckin/checkin');
         } else {
             //redirect to form with data and errors
             Redirect::flashToRoute('ticket/edit', ['ticket' => $ticket]);
