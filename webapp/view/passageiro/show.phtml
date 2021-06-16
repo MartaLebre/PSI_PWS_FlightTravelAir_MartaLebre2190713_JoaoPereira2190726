@@ -5,6 +5,7 @@ use ArmoredCore\WebObjects\Debug;
 
 Layout::includeLayout('passageiroheader');
 $user = Data::get('user');
+\Tracy\Debugger::barDump($user);
 ?>
 
 <!-- container -->
@@ -15,7 +16,7 @@ $user = Data::get('user');
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Dados pessoais <?=$user->username?></h1>
+                <h1 class="page-title">Dados pessoais <?=$user->id?></h1>
             </header>
 
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">

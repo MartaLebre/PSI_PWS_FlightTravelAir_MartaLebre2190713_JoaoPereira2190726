@@ -14,6 +14,11 @@ class PassageiroController extends BaseAuthController
         return View::make('passageiro.index',['user'=>$user]);
     }
 
+    public function historicopassagens()
+    {
+
+    }
+
     public function create()
     {
         View::make('passageiro.create');
@@ -33,9 +38,9 @@ class PassageiroController extends BaseAuthController
         }
     }
 
-    public function show($id)
+    public function show()
     {
-        $user = User::find($id);
+        $user = User::all(\ArmoredCore\WebObjects\Session::get('APP_USER_ID'));
 
         if (is_null($user)) {
             // redirect to standard error page
@@ -44,9 +49,9 @@ class PassageiroController extends BaseAuthController
         }
     }
 
-    public function edit($id)
+    public function edit()
     {
-        $user = user::find($id);
+        $user = User::all(\ArmoredCore\WebObjects\Session::get('APP_USER_ID'));
 
         if (is_null($user)){
 
@@ -57,14 +62,16 @@ class PassageiroController extends BaseAuthController
 
     public function update($id){
 
-        $user = User::find($id);
+
+        $user = User::find([$id]);
 
         $user -> update_attributes(Post::getAll());
 
         if($user->is_valid()){
 
             $user->save();
-            Redirect::toRoute('passageiro/index');
+
+            Redirect::toRoute('passageiro/edit');
 
         }else{
 

@@ -38,9 +38,7 @@ Router::resource('user',        'UserController');
 
 
 //** PassageiroController **
-Router::get('passageiro/index',   'PassageiroController/index');
-Router::get('passageiro/edit', 'PassageiroController/edit');
-Router::get('passageiro/show', 'PassageiroController/show');
+Router::resource('passageiro', 'PassageiroController');
 
 
 //** OperadorCheckinController **
