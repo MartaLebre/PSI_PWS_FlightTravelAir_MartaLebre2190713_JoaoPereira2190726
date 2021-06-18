@@ -24,9 +24,9 @@ class FuncionarioController extends BaseAuthController
     {
         $this->authFilterByRole('administrador');
 
-        $funcionario = User::all(array('conditions' => array('role != ?', 'passageiro')));
+        $funcionarios = User::all(array('conditions' => array('role != ? AND role != ?', 'passageiro', 'administrador')));
 
-        return View::make('funcionario.index', ['funcionario' => $funcionario]);
+        return View::make('funcionario.index', ['funcionarios' => $funcionarios]);
     }
 
 
