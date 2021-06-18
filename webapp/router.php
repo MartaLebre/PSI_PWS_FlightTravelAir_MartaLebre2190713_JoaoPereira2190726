@@ -39,11 +39,11 @@ Router::resource('user',        'UserController');
 
 //** PassageiroController **
 Router::resource('passageiro', 'PassageiroController');
+Router::resource('search', 'SearchController');
 
 
 //** OperadorCheckinController **
-Router::get('operadorcheckin/index',    'OperadorCheckinController/index');
-Router::get('operadorcheckin/checkin',    'OperadorCheckinController/checkin');
+Router::resource('operadorcheckin', 'OperadorCheckinController');
 Router::resource('flight', 'FlightController');
 Router::resource('ticket', 'TicketController');
 

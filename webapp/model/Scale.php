@@ -12,7 +12,8 @@ class Scale extends \ActiveRecord\Model
         array('idvoo'),
     );
 
-    static $has_many = array(
-        array('planescale')
+    static $belongs_to = array(
+        array('aeroportoorigem', 'class_name' => 'Aeroport', 'foreign_key'=>'idaeroportoorigem'),
+        array('aeroportodestino', 'class_name' => 'Aeroport', 'foreign_key'=>'idaeroportodestino')
     );
 }

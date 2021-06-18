@@ -6,7 +6,7 @@ use ArmoredCore\WebObjects\URL;
 Layout::includeLayout('gestorVooheader');
 $scale = Data::get('scale');
 $aeroports = Data::get('aeroports');
-$flights = Data::get('flights');
+$idvoo = Data::get('idvoo');
 ErrMgr::attach($scale) ?>
 
 <!-- container -->
@@ -69,16 +69,8 @@ ErrMgr::attach($scale) ?>
                             </div>
                             <?= ErrMgr::bind('idaeroportodestino') ?>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="idvoo">Voo associado<span class="text-danger">*</span></label>
-                            <div class="col-sm-6">
-                            <select name="idvoo" class="form-control" value="<?=$scale->idvoo?>">
-                                <?php foreach ($flights as $flight){ ?>
-                                    <option value="<?=$flight->id?>"><?=$flight->id?></option>
-                                <?php } ?>
-                            </select>
-                            </div>
-                            <?= ErrMgr::bind('idvoo') ?>
+                        <div>
+                            <input type="hidden" value="<?=$scale->idvoo?>" name="idvoo" class="form-control">
                         </div>
                         <hr>
 

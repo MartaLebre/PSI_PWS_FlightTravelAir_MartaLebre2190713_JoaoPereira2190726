@@ -19,4 +19,11 @@ class OperadorCheckinController extends BaseAuthController
         return \ArmoredCore\WebObjects\View::make('operadorcheckin.checkin', ['users' => $users, 'tickets' => $tickets]);
     }
 
+    public function detalhesvoo($id){
+
+        $tickets = Ticket::find([$id]);
+
+        return \ArmoredCore\WebObjects\View::make('operadorcheckin.detalhesvoo', ['tickets' => $tickets]);
+    }
+
 }

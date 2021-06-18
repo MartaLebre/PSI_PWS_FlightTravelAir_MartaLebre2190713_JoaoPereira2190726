@@ -16,26 +16,29 @@ use ArmoredCore\WebObjects\View;
  * *
  */
 
-class ScaleController extends BaseController implements ResourceControllerInterface
+class ScaleController extends BaseController
 {
     /**
      * Returns index view with all records
      */
-    public function index()
+    public function index($idvoo)
     {
-        $scale = Scale::all();
-        return View::make('scale.index', ['scale' => $scale]);
+        $scales = Scale::all();
+        $flights = Flight::find([$idvoo]);
+
+        return View::make('scale.index', ['flights' => $flights, 'scales' => $scales]);
     }
 
 
     /**
      * Returns a view with a form to create a new record
      */
-    public function create()
+    public function create($idvoo)
     {
+        print_r($idvoo);
         $aeroports = Aeroport::all();
-        $flights = Flight::all();
-        return View::make('scale.create', ['aeroports' => $aeroports, 'flights' => $flights]);
+
+        return View::make('scale.create', ['aeroports' => $aeroports, 'idvoo' => $idvoo]);
 
     }
 
@@ -43,7 +46,7 @@ class ScaleController extends BaseController implements ResourceControllerInterf
     /**
      * Receives new record data through POST method and stores it in the DB table
      */
-    public function store()
+    public function store($idvoo)
     {
         //create new resource (activerecord/model) instance with data from POST
         //your form name fields must match the ones of the table fields
@@ -51,10 +54,11 @@ class ScaleController extends BaseController implements ResourceControllerInterf
 
         if($scale->is_valid()){
             $scale->save();
-            Redirect::toRoute('scale/index');
+            //Redirect::toRoute('scale/index');
+            $this->index($idvoo);
         } else {
             //redirect to form with data and errors
-            Redirect::flashToRoute('scale/create', ['scale' => $scale]);
+            Redirect::flashToRoute('scale/create', ['scale' => $scale, 'idvoo' => $scale->idvoo]);
         }
     }
 
@@ -80,13 +84,12 @@ class ScaleController extends BaseController implements ResourceControllerInterf
     public function edit($id)
     {
         $scale = Scale::find([$id]);
+        $aeroports = Aeroport::all();
 
         if (is_null($scale)) {
             //TODO redirect to standard error page
         } else {
-            $aeroports = Aeroport::all();
-            $flights = Flight::all();
-            return View::make('scale.edit', ['scale' => $scale, 'aeroports' => $aeroports, 'flights' => $flights]);
+            return View::make('scale.edit', ['scale' => $scale, 'aeroports' => $aeroports]);
         }
     }
 
@@ -103,7 +106,8 @@ class ScaleController extends BaseController implements ResourceControllerInterf
 
         if($scale->is_valid()){
             $scale->save();
-            Redirect::toRoute('scale/index');
+            //Redirect::toRoute('scale/index');
+            $this->index($scale->idvoo);
         } else {
             //redirect to form with data and errors
             Redirect::flashToRoute('scale/edit', ['scale' => $scale]);
@@ -118,6 +122,6 @@ class ScaleController extends BaseController implements ResourceControllerInterf
     {
         $scale = scale::find([$id]);
         $scale->delete();
-        Redirect::toRoute('scale/index');
+        Redirect::toRoute('flight/index');
     }
 }

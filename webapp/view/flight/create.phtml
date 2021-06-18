@@ -5,7 +5,7 @@ use ArmoredCore\WebObjects\URL;
 
 Layout::includeLayout('gestorVooheader') ?>
 <?php $flight = Data::get('flight')?>
-<?php $id = Data::get('id')?>
+
 <?php ErrMgr::attach($flight) ?>
 
 
@@ -29,6 +29,26 @@ Layout::includeLayout('gestorVooheader') ?>
                                 <label>Preço de Voo<span class="text-danger">*</span></label>
                                 <input type="text" autocomplete="off" value="<?=$flight->precovoo?>" name="precovoo" class="form-control" placeholder="Introduza o preço de voo">
                                 <?= ErrMgr::bind('precovoo') ?>
+                            </div>
+                            <div class="top-margin">
+                                <label>Origem<span class="text-danger">*</span></label>
+                                <input type="text" autocomplete="off" value="<?=$flight->origem?>" name="origem" class="form-control" placeholder="Introduza a origem do voo">
+                                <?= ErrMgr::bind('origem') ?>
+                            </div>
+                            <div class="top-margin">
+                                <label>Destino<span class="text-danger">*</span></label>
+                                <input type="text" autocomplete="off" value="<?=$flight->destino?>" name="destino" class="form-control" placeholder="Introduza o destino do voo">
+                                <?= ErrMgr::bind('destino') ?>
+                            </div>
+                            <div class="top-margin">
+                                <label>Data de Origem<span class="text-danger">*</span></label>
+                                <input type="datetime-local" autocomplete="off" value="<?=$flight->dataorigem?>" name="dataorigem" class="form-control" placeholder="Introduza a data de origem do voo">
+                                <?= ErrMgr::bind('dataorigem') ?>
+                            </div>
+                            <div class="top-margin">
+                                <label>Data de Destino<span class="text-danger">*</span></label>
+                                <input type="datetime-local" autocomplete="off" value="<?=$flight->datadestino?>" name="datadestino" class="form-control" placeholder="Introduza a data de destino do voo">
+                                <?= ErrMgr::bind('datadestino') ?>
                             </div>
 
                             <hr>

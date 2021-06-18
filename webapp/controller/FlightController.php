@@ -55,7 +55,7 @@ class FlightController extends BaseController implements ResourceControllerInter
 
         if($flight->is_valid()){
             $flight->save();
-            Redirect::toRoute('flight/index');
+            Redirect::ToRoute('flight/index');
         } else {
             //redirect to form with data and errors
             Redirect::flashToRoute('flight/create', ['flight' => $flight]);
