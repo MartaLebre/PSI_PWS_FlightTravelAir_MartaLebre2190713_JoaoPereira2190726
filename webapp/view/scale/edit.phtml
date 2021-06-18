@@ -17,7 +17,7 @@ ErrMgr::attach($scale) ?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Alterar informações da escala <?=$scale->id?></h1>
+                <h1 class="page-title">Alterar informações da Escala  <?=$scale->aeroportoorigem->nome?> - <?=$scale->aeroportodestino->nome?></h1>
             </header>
 
 
@@ -27,28 +27,28 @@ ErrMgr::attach($scale) ?>
                     <form class="form-horizontal" method="post" action="<?=Url::toRoute('scale/update', $scale->id)?>">
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="datahoraorigem">Data e Hora de Origem<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="datahoraorigem">Data e Hora de Origem:</label>
                             <div class="col-sm-6">
-                                <input type="datetime-local" value="<?=$scale->datahoraorigem?>" class="form-control" required name="datahoraorigem" placeholder="Introuza o seu nome completo">
+                                <input type="text" value="<?=$scale->datahoraorigem?>" class="form-control" required name="datahoraorigem" placeholder="Introduza a data e hora de origem da escala">
                                 <?= ErrMgr::bind('datahoraorigem') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="datahoradestino">Data e Hora de Destino<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="datahoradestino">Data e Hora de Destino:</label>
                             <div class="col-sm-6">
-                                <input type="datetime-local" value="<?=$scale->datahoradestino?>" class="form-control" required name="datahoradestino" placeholder="Introuza o seu nome completo">
+                                <input type="text" value="<?=$scale->datahoradestino?>" class="form-control" required name="datahoradestino" placeholder="Introduza a data e hora de destino da escala">
                                 <?= ErrMgr::bind('datahoradestino') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="distancia">Distância<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="distancia">Distância:</label>
                             <div class="col-sm-6">
                                 <input type="text" required value="<?=$scale->distancia?>" class="form-control" name="distancia" placeholder="Introduza a distância da escala">
                                 <?= ErrMgr::bind('distancia') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="idaeroportoorigem">Aeroporto de Origem<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="idaeroportoorigem">Aeroporto de Origem:</label>
                             <div class="col-sm-6">
                             <select name="idaeroportoorigem" class="form-control" value="<?=$scale->idaeroportoorigem?>">
                                 <?php foreach ($aeroports as $aeroport){ ?>
@@ -59,7 +59,7 @@ ErrMgr::attach($scale) ?>
                             <?= ErrMgr::bind('idaeroportoorigem') ?>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="idaeroportodestino">Aeroporto de Destino<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="idaeroportodestino">Aeroporto de Destino<span class="text-danger">*</span>:</label>
                             <div class="col-sm-6">
                             <select name="idaeroportodestino" class="form-control" value="<?=$scale->idaeroportodestino?>">
                                 <?php foreach ($aeroports as $aeroport){ ?>

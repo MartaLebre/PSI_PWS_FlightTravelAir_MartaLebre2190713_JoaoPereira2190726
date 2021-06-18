@@ -14,7 +14,7 @@ Layout::includeLayout('gestorVooheader') ?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Informações do avião <?=$plane->referencia?></h1>
+                <h1 class="page-title">Informações do Avião <?=$plane->referencia?></h1>
             </header>
 
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -24,15 +24,15 @@ Layout::includeLayout('gestorVooheader') ?>
 
                         <form method="post" action="<?=Url::toRoute('plane/index')?>">
                             <div class="top-margin">
-                                <label>Referência<span class="text-danger">*</span></label>
+                                <label>Referência</label>
                                 <input readonly="true" type="text" value="<?php echo $plane->referencia?>" name="referencia" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>Lotação<span class="text-danger">*</span></label>
+                                <label>Lotação</label>
                                 <input readonly="true" type="text" value="<?=$plane->lotacao?>" name="lotacao" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>Tipo de Avião<span class="text-danger">*</span></label>
+                                <label>Tipo de Avião</label>
                                 <input readonly="true" type="text" value="<?=$plane->tipoaviao?>" name="tipoaviao" class="form-control">
                             </div>
 

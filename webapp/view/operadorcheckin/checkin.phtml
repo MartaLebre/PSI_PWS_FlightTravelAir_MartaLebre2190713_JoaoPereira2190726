@@ -8,34 +8,33 @@ $users = Data::get('users');
 $tickets = Data::get('tickets');
 ErrMgr::attach($users) ?>
 
+<div class="container">
 
-    <div class="container">
+    <ol class="breadcrumb">
+        <li><a href="<?=Url::toRoute('operadorcheckin/index')?>">Home</a></li>
+        <li class="active">Realizar Checkin / Detalhes de Voo</li>
+    </ol>
 
-        <ol class="breadcrumb">
-            <li><a href="<?=Url::toRoute('operadorcheckin/index')?>">Home</a></li>
-            <li class="active">Lista de Passageiros para realizar checkin</li>
-        </ol>
-
-        <h2 class="text-left top-space">Lista de Passageiros</h2>
-        <h2 class="top-space"></h2>
-        <div class="row">
-            <div class="col-sm-12">
-                <table class="table table-striped"><thead><th><h3>Nome do Passageiro</h3></th><th><h3>Realizar Checkin / Detalhes de Voo</h3></th></thead>
-                    <tbody>
-                    <?php foreach ($tickets as $ticket) { ?>
-
-                        <tr>
-                            <td><?=$ticket->utilizador->nomecompleto?></td>
-                            <td>
-                                <a href="<?=Url::toRoute('ticket/edit', $ticket->id)?>" class="btn btn-warning" role="button">Checkin</a>
-                                <a href="<?=Url::toRoute('operadorcheckin/detalhesvoo', $ticket->id)?>" class="btn btn-warning" role="button">Detalhes Voo</a>
-                            </td>
-                        </tr>
-
-                    <?php } ?>
-                    </tbody>
-                </table>
-            </div>
-
-    </div>	<!-- /container -->
+    <h2 class="text-left top-space">Lista de Passageiros</h2>
+    <h2 class="top-space"></h2>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-striped"><thead><th><h3>Nome do Passageiro</h3></th><th><h3>Telefone</h3></th><th><h3>NIF</h3></th><th><h3>Ações de Gestão</h3></th></thead>
+                <tbody>
+                <?php foreach ($tickets as $ticket) { ?>
+                    <tr>
+                        <td><?=$ticket->utilizador->nomecompleto?></td>
+                        <td><?=$ticket->utilizador->telefone?></td>
+                        <td><?=$ticket->utilizador->nif?></td>
+                        <td>
+                            <a href="<?=Url::toRoute('ticket/edit', $ticket->id)?>" class="btn btn-warning" role="button">Checkin</a>
+                            <a href="<?=Url::toRoute('operadorcheckin/detalhesvoo', $ticket->id)?>" class="btn btn-info" role="button">Detalhes Voo</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div> <!-- /row -->
+</div>	<!-- /container -->
 <?php Layout::includeLayout('footer')?>

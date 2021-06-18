@@ -22,12 +22,12 @@ Layout::includeLayout('passageiroheader');
                         <hr>
                         <form method="post" action="<?=Url::toRoute('search/show')?>">
                             <div class="top-margin">
-                                <label>Origem </label>
+                                <label>Origem<span class="text-danger">*</span></label>
                                 <input type="text" value=""  name="origem" class="form-control">
                             </div>
 
                             <div class="top-margin">
-                                <label>Destino </label>
+                                <label>Destino<span class="text-danger">*</span></label>
                                 <input type="text" value="" name="destino" class="form-control">
                             </div>
 

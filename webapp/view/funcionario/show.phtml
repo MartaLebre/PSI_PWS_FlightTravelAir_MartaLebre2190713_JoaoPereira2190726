@@ -14,7 +14,7 @@ Layout::includeLayout('adminheader') ?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Informações do <?=$funcionario->role. " '" . $funcionario->nomecompleto . "'"?></h1>
+                <h1 class="page-title">Informações do <?=$funcionario->role?> <?=$funcionario->nomecompleto?></h1>
             </header>
 
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -24,27 +24,27 @@ Layout::includeLayout('adminheader') ?>
 
                         <form method="post" action="<?=Url::toRoute('funcionario/index')?>">
                             <div class="top-margin">
-                                <label>Nome<span class="text-danger">*</span></label>
+                                <label>Nome Completo</label>
                                 <input readonly="true" type="text" value="<?php echo $funcionario->nomecompleto?>" name="descricao" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>Função<span class="text-danger">*</span></label>
+                                <label>Função</label>
                                 <input readonly="true" type="text" value="<?=$funcionario->role?>" name="role" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>Morada<span class="text-danger">*</span></label>
+                                <label>Morada</label>
                                 <input readonly="true" type="text" value="<?=$funcionario->morada?>" name="morada" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>Email<span class="text-danger">*</span></label>
+                                <label>Email</label>
                                 <input readonly="true" type="text" value="<?=$funcionario->email?>" name="email" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>NIF<span class="text-danger">*</span></label>
+                                <label>NIF</label>
                                 <input readonly="true" type="text" value="<?=$funcionario->nif?>" name="nif" class="form-control">
                             </div>
                             <div class="top-margin">
-                                <label>Telefone<span class="text-danger">*</span></label>
+                                <label>Telefone</label>
                                 <input readonly="true" type="text" value="<?=$funcionario->telefone?>" name="telefone" class="form-control">
                             </div>
                             <hr>

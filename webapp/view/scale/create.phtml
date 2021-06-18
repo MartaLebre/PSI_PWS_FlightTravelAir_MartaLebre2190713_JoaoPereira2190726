@@ -36,7 +36,7 @@ ErrMgr::attach($scale) ?>
                                 <input type="datetime-local" autocomplete="off" value="<?=$scale->datahoradestino?>" name="datahoradestino" class="form-control" placeholder="Introduza o seu nome completo">
                                 <?= ErrMgr::bind('datahoradestino') ?>
                             </div>
-                            <div>
+                            <div class="top-margin">
                                 <label>Distância<span class="text-danger">*</span></label>
                                 <input type="text" autocomplete="off" value="<?=$scale->distancia?>" name="distancia" class="form-control" placeholder="Introduza a distância da escala">
                                 <?= ErrMgr::bind('distancia') ?>
@@ -65,12 +65,12 @@ ErrMgr::attach($scale) ?>
                             <hr>
 
                             <div class="col-lg-4 text-right">
-                                <button class="btn btn-action" type="submit">Criar</button>
+                                <button class="btn btn-action" type="submit">Registar</button>
                             </div>
                     </div>
                     </form>
                 </div>
-                <form method="post" action="<?=URL::toRoute('scale/index')?>">
+                <form method="post" action="<?=URL::toRoute('flight/index')?>">
                     <button class="btn btn-danger" type="submit">Cancelar</button>
                 </form>
             </div>

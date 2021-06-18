@@ -25,7 +25,7 @@ Layout::includeLayout('adminheader') ?>
                     <form class="form-horizontal" method="post" action="<?=Url::toRoute('aeroport/update', $aeroport->id)?>">
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="nome">Nome:<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="nome">Nome:</label>
                             <div class="col-sm-6">
                                 <input type="text" value="<?=$aeroport->nome?>" class="form-control" required name="nome" placeholder="Introduza o nome do aeroporto">
                                 <?= ErrMgr::bind('nome') ?>
@@ -33,7 +33,7 @@ Layout::includeLayout('adminheader') ?>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="morada">Morada:<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="morada">Morada:</label>
                             <div class="col-sm-6">
                                 <input type="text" value="<?=$aeroport->morada?>" class="form-control" required name="morada" placeholder="Introduza a morada do aeroporto">
                                 <?= ErrMgr::bind('morada') ?>
@@ -41,7 +41,7 @@ Layout::includeLayout('adminheader') ?>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="nif">NIF:<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="nif">NIF:</label>
                             <div class="col-sm-6">
                                 <input type="text" value="<?=$aeroport->nif?>" class="form-control" required name="nif" placeholder="Introduza o nif do aeroporto">
                                 <?= ErrMgr::bind('nif') ?>
@@ -49,7 +49,7 @@ Layout::includeLayout('adminheader') ?>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="telefone">Telefone:<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="telefone">Telefone:</label>
                             <div class="col-sm-6">
                                 <input type="text" value="<?=$aeroport->telefone?>" class="form-control" required name="telefone" placeholder="Introduza o telefone do aeroporto">
                                 <?= ErrMgr::bind('telefone') ?>
@@ -57,7 +57,7 @@ Layout::includeLayout('adminheader') ?>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Email:<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="email">Email:</label>
                             <div class="col-sm-6">
                                 <input type="text" value="<?=$aeroport->email?>" class="form-control" required name="email" placeholder="Introduza o email do aeroporto">
                                 <?= ErrMgr::bind('email') ?>

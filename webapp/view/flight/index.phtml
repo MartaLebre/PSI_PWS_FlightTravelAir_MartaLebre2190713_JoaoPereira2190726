@@ -16,11 +16,11 @@ Layout::includeLayout('gestorVooheader') ?>
     <h2 class="top-space"></h2>
     <div class="row">
         <div class="col-sm-1-12">
-            <table class="table table-striped"><thead><th><h3>Preço de Voo</h3></th><th><h3>Origem</h3></th><th><h3>Destino</h3></th><th><h3>Data de origem</h3></th><th><h3>Data de destino</h3></th><th><h3>Ações de Gestão</h3></th></thead>
+            <table class="table table-striped"><thead><th><h3>Preço</h3></th><th><h3>Origem</h3></th><th><h3>Destino</h3></th><th><h3>Data de origem</h3></th><th><h3>Data de destino</h3></th><th><h3>Ações de Gestão</h3></th></thead>
                 <tbody>
                 <?php foreach ($flights as $flight) { ?>
                     <tr>
-                        <td><?=$flight->precovoo?></td>
+                        <td><?=$flight->precovoo?> €</td>
                         <td><?=$flight->origem?></td>
                         <td><?=$flight->destino?></td>
                         <td><?=$flight->dataorigem?></td>
@@ -38,9 +38,9 @@ Layout::includeLayout('gestorVooheader') ?>
 
         </div>
         <div class="col-sm-6">
-            <h3>Registar Novo Voo</h3>
+            <h3>Registar um novo Voo</h3>
             <p>
-                <a href="<?=Url::toRoute('flight/create')?>" class="btn btn-info" role="button">Novo</a>
+                <a href="<?=Url::toRoute('flight/create')?>" class="btn btn-info" role="button">Registar</a>
             </p>
         </div>
     </div> <!-- /row -->

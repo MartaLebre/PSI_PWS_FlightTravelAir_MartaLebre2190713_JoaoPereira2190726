@@ -7,10 +7,11 @@ Layout::includeLayout('adminheader'); ?>
 <!-- Header -->
 <header id="head">
     <div class="container">
-        <div class="row">
+        <p class="row">
             <h1 class="lead"><b>Flight Travel Air</b><br>Área de administrador</h1>
-            <p class="tagline">Gestão de aeoportos e de funcionários.</p>
-        </div>
+            <p class="tagline">Gestão de aeoportos e de funcionários.<br><br><a class="btn btn-action btn-lg" role="button" href="<?= Url::toRoute('aeroport/index')?>">Gestão de Aeroportos</a></p>
+            <p class="tagline"><a class="btn btn-action btn-lg" role="button" href="<?= Url::toRoute('funcionario/index')?>">Gestão de Funcionários</a></p>
+    </div>
     </div>
 </header>
 <!-- /Header -->

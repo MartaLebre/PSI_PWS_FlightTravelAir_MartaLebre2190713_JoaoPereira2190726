@@ -32,38 +32,37 @@ Layout::includeLayout('adminheader') ?>
                             <div class="top-margin">
                                 <label>Função<span class="text-danger">*</span></label>
                                 <select name="role" class="form-control" value="<?=$funcionario->role?>">
-                                    <option value="administrador">administrador</option>
                                     <option value="gestorvoo">gestor de voo</option>
                                     <option value="operadorcheckin" selected="selected" >operador de checkin</option>
                                 </select>
                                 <?= ErrMgr::bind('role') ?>
                             </div>
-                            <div>
+                            <div class="top-margin">
                                 <label>Morada<span class="text-danger">*</span></label>
                                 <input type="text" autocomplete="off" value="<?=$funcionario->morada?>" name="morada" class="form-control" placeholder="Introduza a sua morada">
                                 <?= ErrMgr::bind('morada') ?>
                             </div>
-                            <div>
+                            <div class="top-margin">
                                 <label>Email<span class="text-danger">*</span></label>
                                 <input type="text" autocomplete="off" value="<?=$funcionario->email?>" name="email" class="form-control" placeholder="Introduza o seu email">
                                 <?= ErrMgr::bind('email') ?>
                             </div>
-                            <div>
+                            <div class="top-margin">
                                 <label>NIF<span class="text-danger">*</span></label>
                                 <input type="text" autocomplete="off" value="<?=$funcionario->nif?>" name="nif" class="form-control" placeholder="Introduza o seu nif">
                                 <?= ErrMgr::bind('nif') ?>
                             </div>
-                            <div>
+                            <div class="top-margin">
                                 <label>Telefone<span class="text-danger">*</span></label>
                                 <input type="text" autocomplete="off" value="<?=$funcionario->telefone?>" name="telefone" class="form-control" placeholder="Introduza o seu numero de telefone">
                                 <?= ErrMgr::bind('telefone') ?>
                             </div>
-                            <div>
+                            <div class="top-margin">
                                 <label>Username<span class="text-danger">*</span></label>
                                 <input type="text" autocomplete="off" value="<?=$funcionario->username?>" name="username" class="form-control" placeholder="Introduza o seu username">
                                 <?= ErrMgr::bind('username') ?>
                             </div>
-                            <div>
+                            <div class="top-margin">
                                 <label>Password<span class="text-danger">*</span></label>
                                 <input type="password" autocomplete="off" value="<?=$funcionario->password?>" name="password" class="form-control" placeholder="Introduza a sua password">
                                 <?= ErrMgr::bind('password') ?>
@@ -72,7 +71,7 @@ Layout::includeLayout('adminheader') ?>
                             <hr>
 
                             <div class="col-lg-4 text-right">
-                                <button class="btn btn-action" type="submit">Criar</button>
+                                <button class="btn btn-action" type="submit">Registar</button>
                             </div>
                     </div>
                     </form>

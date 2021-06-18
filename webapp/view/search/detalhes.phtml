@@ -78,9 +78,15 @@ $flights = Data::get('flights');
 
                             <?php } ?>
                             <hr>
+                            <div class="col-lg-4 text-left">
+                                <a href="<?=Url::toRoute('search/index')?>" class="btn btn-danger" role="button">Voltar</a>
+                            </div>
+
                             <div class="col-lg-4 text-right">
                                 <button class="btn btn-action" type="submit">Comprar passagem</button>
                             </div>
+
+
                     </div>
                     </form>
                 </div>

@@ -15,17 +15,17 @@ $scales = Data::get('scales');
         <li class="active">Escalas</li>
     </ol>
 
-    <h2 class="text-left top-space">Voo nº <?=$flights->id?>, <?= $flights->origem?> - <?= $flights->destino?></h2>
+    <h2 class="text-left top-space">Escalas do Voo nº <?=$flights->id?>, <?= $flights->origem?> - <?= $flights->destino?></h2>
     <h2 class="top-space"></h2>
     <div class="row">
         <div class="col-sm-1-12">
-            <table class="table table-striped"><thead><th><h3>Data e Hora de Origem</h3></th><th><h3>Data e Hora de Destino</h3><th><h3>Distância</h3></th><th><h3>Aeroporto de Origem</h3></th><th><h3>Aeroporto de Destino</h3></th><th><h3>Ações de Gestão</h3></th></thead>
+            <table class="table table-striped"><thead><th><h4>Data e Hora de Origem</h4></th><th><h4>Data e Hora de Destino</h4><th><h4>Distância</h4></th><th><h4>Aeroporto Origem</h4></th><th><h4>Aeroporto Destino</h4></th><th><h4>Ações de Gestão</h4></th></thead>
                 <tbody>
                 <?php foreach ($flights->scales as $scale) { ?>
                     <tr>
                         <td><?=$scale->datahoraorigem?></td>
                         <td><?=$scale->datahoradestino?></td>
-                        <td><?=$scale->distancia?></td>
+                        <td><?=$scale->distancia?> km</td>
                         <td><?=$scale->aeroportoorigem->nome?></td>
                         <td><?=$scale->aeroportodestino->nome?></td>
                         <td>
@@ -39,9 +39,9 @@ $scales = Data::get('scales');
 
         </div>
         <div class="col-sm-6">
-            <h3>Registar Nova Escala</h3>
+            <h3>Registar uma nova Escala</h3>
             <p>
-                <a href="<?=Url::toRoute('scale/create', $flights->id)?>" class="btn btn-info" role="button">Novo</a>
+                <a href="<?=Url::toRoute('scale/create', $flights->id)?>" class="btn btn-info" role="button">Registar</a>
             </p>
         </div>
     </div> <!-- /row -->

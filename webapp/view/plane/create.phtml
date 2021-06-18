@@ -30,12 +30,12 @@ Layout::includeLayout('gestorVooheader') ?>
                                 <?= ErrMgr::bind('referencia') ?>
                             </div>
 
-                            <div>
+                            <div class="top-margin">
                                 <label>Lotação<span class="text-danger">*</span></label>
                                 <input type="text" autocomplete="off" value="<?=$plane->lotacao?>" name="lotacao" class="form-control" placeholder="Introduza a lotacao do aviao">
                                 <?= ErrMgr::bind('lotacao') ?>
                             </div>
-                            <div>
+                            <div class="top-margin">
                                 <label>Tipo de avião<span class="text-danger">*</span></label>
                                 <input type="text" autocomplete="off" value="<?=$plane->tipoaviao?>" name="tipoaviao" class="form-control" placeholder="Introduza o tipo de aviao">
                                 <?= ErrMgr::bind('tipoaviao') ?>
@@ -44,7 +44,7 @@ Layout::includeLayout('gestorVooheader') ?>
                             <hr>
 
                             <div class="col-lg-4 text-right">
-                                <button class="btn btn-action" type="submit">Criar</button>
+                                <button class="btn btn-action" type="submit">Registar</button>
                             </div>
                     </div>
                     </form>

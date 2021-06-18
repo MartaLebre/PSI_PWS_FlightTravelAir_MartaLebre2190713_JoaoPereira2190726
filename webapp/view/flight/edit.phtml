@@ -15,7 +15,7 @@ Layout::includeLayout('gestorVooheader') ?>
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Alterar informações do Voo <?=$flight->id?></h1>
+                <h1 class="page-title">Alterar informações do Voo nº<?=$flight->id?>, <?=$flight->origem?> - <?=$flight->destino?></h1>
             </header>
 
 
@@ -25,35 +25,35 @@ Layout::includeLayout('gestorVooheader') ?>
                     <form class="form-horizontal" method="post" action="<?=Url::toRoute('flight/update', $flight->id)?>">
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="precovoo">Preço de Voo<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="precovoo">Preço de Voo:</label>
                             <div class="col-sm-6">
                                 <input type="text" value="<?=$flight->precovoo?>" class="form-control" required name="precovoo" placeholder="Introduza o preco do voo">
                                 <?= ErrMgr::bind('precovoo') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="origem">Origem<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="origem">Origem:</label>
                             <div class="col-sm-6">
                                 <input type="text" value="<?=$flight->origem?>" class="form-control" required name="origem" placeholder="Introduza a origem do voo">
                                 <?= ErrMgr::bind('origem') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="destino">Destino<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="destino">Destino:</label>
                             <div class="col-sm-6">
                                 <input type="text" value="<?=$flight->destino?>" class="form-control" required name="destino" placeholder="Introduza o destino do voo">
                                 <?= ErrMgr::bind('destino') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="dataorigem">Data de Origem<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="dataorigem">Data de Origem:</label>
                             <div class="col-sm-6">
                                 <input type="text" value="<?=$flight->dataorigem?>" class="form-control" required name="dataorigem" placeholder="Introduza a data de origem do voo">
                                 <?= ErrMgr::bind('dataorigem') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="datadestino">Data de Origem<span class="text-danger">*</span></label>
+                            <label class="control-label col-sm-2" for="datadestino">Data de Origem:</label>
                             <div class="col-sm-6">
                                 <input type="text" value="<?=$flight->datadestino?>" class="form-control" required name="datadestino" placeholder="Introduza a data de destino do voo">
                                 <?= ErrMgr::bind('datadestino') ?>
