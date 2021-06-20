@@ -36,28 +36,26 @@ class SearchController extends BaseAuthController
         return View::make('search.detalhes' ,['flights' => $flights]);
     }
 
-    public function comprarticket($id)
+    public function comprarticket($idvoo)
     {
 
         $this->authFilterByRole('passageiro');
 
-        $flights = Flight::find([$id]);
+        $flights = Flight::find([$idvoo]);
 
         $user = User::all(\ArmoredCore\WebObjects\Session::get('APP_USER_ID'));
 
         return View::make('search.comprarticket' ,['flights' => $flights, 'user' => $user]);
     }
 
-    public function pagamentoticket($id)
+    public function pagamentoticket($idvoo)
     {
         $this->authFilterByRole('passageiro');
 
-        $email = Post::get('email');
+        $user = User::all(\ArmoredCore\WebObjects\Session::get('APP_USER_ID'));
 
-        $users = User::find(array('conditions' => array(' email = ?', $email,)));;
+        $flights = Flight::find([$idvoo]);
 
-        $flights = Flight::find([$id]);
-
-        return View::make('search.pagamentoticket' ,['flights' => $flights, 'users', $users]);
+        return View::make('search.pagamentoticket' ,['flights' => $flights, 'user', $user]);
     }
 }
