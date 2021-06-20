@@ -31,16 +31,25 @@ class PassageiroController extends BaseAuthController
 
     public function historicopdf($id)
     {
+        $tickets = Ticket::find([$id]);
 
         $pdf = new Dompdf();
 
-        $pdf->loadHtml('<h1>Bilhete para a china no voo 377</h1>
+        $pdf->loadHtml('<h1> '.$tickets->id.' </h1>
+        <h1> '.$tickets->precofinal.' </h1>
+        <h1> '.$tickets->datahoracompra.' </h1>
+        <h1> '.$tickets->vooida->origem.' </h1>
+        <?=  ?>
+        <h1>'.$tickets->checkin.'</h1>
+        <h1> '.$tickets->voovolta->origem.' </h1>
+    
+
 ');
 
         $pdf->render();
 
         $pdf->stream(
-            "Bilhete_voo_377",
+            'Bilhete_voo_'.$tickets->id.'',
             array("Attachement" => true)
         );
 
