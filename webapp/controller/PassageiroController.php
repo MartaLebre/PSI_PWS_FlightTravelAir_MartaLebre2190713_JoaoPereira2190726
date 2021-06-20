@@ -16,7 +16,11 @@ class PassageiroController extends BaseAuthController
 
     public function historicopassagens()
     {
+        $user = User::all(\ArmoredCore\WebObjects\Session::get('APP_USER_ID'));
 
+        $passagens = Ticket::find('idutilizador', $user);
+
+       return View::make('passageiro.historicopassagens', ['passagens' => $passagens]);
     }
 
     public function create()

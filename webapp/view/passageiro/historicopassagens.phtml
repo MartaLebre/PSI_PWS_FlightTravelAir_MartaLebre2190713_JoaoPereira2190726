@@ -4,59 +4,36 @@ use ArmoredCore\WebObjects\URL;
 use ArmoredCore\WebObjects\Debug;
 
 Layout::includeLayout('passageiroheader') ?>
-<?php $ticket = Data::get('ticket') ?>
+<?php $passagens = Data::get('passagens') ?>
 
-<!-- container -->
 <div class="container">
 
+    <ol class="breadcrumb">
+        <li><a href="<?=Url::toRoute('passageiro/index')?>">Home</a></li>
+        <li class="active">Bilhetes</li>
+    </ol>
+
+<!--    <h2 class="text-left top-space">Lista de bilhetes do passageiro --><?//=$passagens->utilizador->nomecompleto?><!--</h2>-->
+    <h2 class="top-space"></h2>
     <div class="row">
+        <div class="col-sm-1-12">
+            <table class="table table-striped"><thead><th><h3>Preço</h3></th><th><h3>Data Compra </h3></th><th><h3>Checkin</h3><th><h3>Ações de Gestão</h3></th></thead>
+                <tbody>
+                <?php foreach ($passagens as $passagem) { ?>
+                    <tr>
+                        <td><?=$passagem->precofinal?></td>
+                        <td><?=$passagem->datahoracompra?></td>
+                        <td><?=$passagem->checkin?></td>
+                        <td>
+<!--                            <a href="--><?//=Url::toRoute('plane/show', $plane->id)?><!--" class="btn btn-info" role="button">Ver detalhes</a>-->
+<!--                            <a href="--><?//=Url::toRoute('plane/edit', $plane->id)?><!--" class="btn btn-warning" role="button">Baixar PDF do Bilhete</a>-->
+                        </td>
+                    </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div> <!-- /row -->
 
-        <!-- Article main content -->
-        <article class="col-xs-12 maincontent">
-            <header class="page-header">
-                <h1 class="page-title">Informações do bilhete <?=$ticket->id?> do passageiro <?=$ticket->idutilizador?></h1>
-            </header>
-
-            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <hr>
-
-                        <form method="post" action="<?=Url::toRoute('operadorcheckin/index')?>">
-                            <div class="top-margin">
-                                <label>Preco Final</label>
-                                <input readonly="true" type="text" value="<?php echo $ticket->precofinal?>" name="precofinal" class="form-control">
-                            </div>
-                            <div class="top-margin">
-                                <label>Data e Hora de Compra</label>
-                                <input readonly="true" type="text" value="<?=$ticket->datahoracompra?>" name="datahoracompra" class="form-control">
-                            </div>
-                            <div class="top-margin">
-                                <label>Checkin</label>
-                                <input readonly="true" type="text" value="<?=$ticket->checkin?>" name="checkin" class="form-control">
-                            </div>
-                            <div class="top-margin">
-                                <label>Voo ida</label>
-                                <input readonly="true" type="text" value="<?=$ticket->idvooida?>" name="idvooida" class="form-control">
-                            </div>
-                            <div class="top-margin">
-                                <label>Voo volta</label>
-                                <input readonly="true" type="text" value="<?=$ticket->idvoovolta?>" name="idvoovolta" class="form-control">
-                            </div>
-
-                            <hr>
-
-                    </div>
-                    </form>
-                </div>
-            </div>
-
-    </div>
-
-    </article>
-    <!-- /Article -->
-
-</div>
 </div>	<!-- /container -->
-
-<?php Layout::includeLayout('footer') ?>
+<?php Layout::includeLayout('footer')?>
