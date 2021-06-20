@@ -36,12 +36,12 @@ class SearchController extends BaseAuthController
         return View::make('search.detalhes' ,['flights' => $flights]);
     }
 
-    public function comprarticket($idvoo)
+    public function comprarticket($id)
     {
 
         $this->authFilterByRole('passageiro');
 
-        $flights = Flight::find([$idvoo]);
+        $flights = Flight::find([$id]);
 
         $user = User::all(\ArmoredCore\WebObjects\Session::get('APP_USER_ID'));
 
@@ -52,9 +52,9 @@ class SearchController extends BaseAuthController
     {
         $this->authFilterByRole('passageiro');
 
-        $user = User::all(\ArmoredCore\WebObjects\Session::get('APP_USER_ID'));
 
         $flights = Flight::find([$idvoo]);
+        $user = User::all(\ArmoredCore\WebObjects\Session::get('APP_USER_ID'));
 
         return View::make('search.pagamentoticket' ,['flights' => $flights, 'user', $user]);
     }

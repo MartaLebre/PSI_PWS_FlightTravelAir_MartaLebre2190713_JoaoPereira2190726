@@ -26,32 +26,70 @@ ErrMgr::attach($user);
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <hr>
-                        <form method="post" action="<?=Url::toRoute('search/pagamentoticket', $flights->id)?>">
+                        <form method="post" action="<?=Url::toRoute('ticket/store')?>">
                             <div class="top-margin">
                                 <label>Nome Completo:</label>
-                                <input type="text" value="<?=$user->nomecompleto?>" name="nomecompleto" class="form-control">
+                                <input type="text" value="<?=$user->nomecompleto?>" class="form-control">
                                 <?= ErrMgr::bind('nomecompleto') ?>
                             </div>
                             <div class="top-margin">
                                 <label>Email:</label>
-                                <input type="email" value="<?=$user->email?>" name="email" class="form-control">
+                                <input type="email" value="<?=$user->email?>" class="form-control">
                                 <?= ErrMgr::bind('email') ?>
                             </div>
                             <div class="top-margin">
                                 <label>Nif:</label>
-                                <input type="text" value="<?=$user->nif?>" name="nif" class="form-control">
+                                <input type="text" value="<?=$user->nif?>" class="form-control">
                                 <?= ErrMgr::bind('nif') ?>
                             </div>
                             <div class="top-margin">
                                 <label>Telefone:</label>
-                                <input type="text" value="<?=$user->telefone?>" name="telefone" class="form-control">
+                                <input type="text" value="<?=$user->telefone?>" class="form-control">
                                 <?= ErrMgr::bind('telefone') ?>
                             </div>
 
                             <div class="top-margin">
                                 <label>Morada:</label>
-                                <input type="text" value="<?=$user->morada?>" name="morada" class="form-control">
+                                <input type="text" value="<?=$user->morada?>" class="form-control">
                                 <?= ErrMgr::bind('morada') ?>
+                            </div>
+
+                            <div class="top-margin">
+                                <label>Número do cartão de crédito:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="top-margin">
+                                <label>Validade Mês / Validade Ano</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="top-margin">
+                                <label>CVC:</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+
+                            <div>
+                                <input type="hidden" value="<?=$flights->precovoo + 20?>" name="precofinal" class="form-control">
+                            </div>
+
+                            <div>
+                                <input type="hidden" value= name="datahoracompra" class="form-control">
+                            </div>
+
+                            <div>
+                                <input type="hidden" value= name="checkin" class="form-control">
+                            </div>
+
+                            <div>
+                                <input type="hidden" value="<?=$flights->id?>" name="idvooida" class="form-control">
+                            </div>
+
+                            <div>
+                                <input type="hidden" value="<?=$flights->id?>" name="idvoovolta" class="form-control">
+                            </div>
+
+                            <div>
+                                <input type="hidden" value="<?=$user->id?>" name="idutilizador" class="form-control">
                             </div>
 
                             <hr>

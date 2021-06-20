@@ -47,7 +47,7 @@ class TicketController extends BaseController implements ResourceControllerInter
         //create new resource (activerecord/model) instance with data from POST
         //your form name fields must match the ones of the table fields
         $ticket = new Ticket(Post::getAll());
-
+        print_r($ticket);
         if($ticket->is_valid()){
             $ticket->save();
             Redirect::toRoute('passageiro/index');
