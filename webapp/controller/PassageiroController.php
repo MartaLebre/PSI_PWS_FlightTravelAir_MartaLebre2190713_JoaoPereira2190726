@@ -3,6 +3,7 @@ use ArmoredCore\Interfaces\ResourceControllerInterface;
 use ArmoredCore\WebObjects\View;
 use ArmoredCore\WebObjects\Post;
 use ArmoredCore\WebObjects\Redirect;
+use Dompdf\Dompdf;
 
 
 class PassageiroController extends BaseAuthController
@@ -16,11 +17,36 @@ class PassageiroController extends BaseAuthController
 
     public function historicopassagens()
     {
-        $user = User::all(\ArmoredCore\WebObjects\Session::get('APP_USER_ID'));
+        $tickets = Ticket::all(array('conditions' => array('idutilizador = ?', \ArmoredCore\WebObjects\Session::get('APP_USER_ID'))));
 
-        $passagens = Ticket::find('idutilizador', $user);
+       return View::make('passageiro.historicopassagens', ['$tickets' => $tickets]);
+    }
 
-       return View::make('passageiro.historicopassagens', ['passagens' => $passagens]);
+//    public function historicodetalhes($id)
+//    {
+//        $tickets = Ticket::find([$id]);
+//
+//        return View::make('passageiro.historicodetalhes', ['$tickets' => $tickets]);
+//    }
+
+    public function historicopdf($id)
+    {
+
+        $pdf = new Dompdf();
+
+        $pdf->loadHtml('<h1>Bilhete para a china no voo 377</h1>
+');
+
+        $pdf->render();
+
+        $pdf->stream(
+            "Bilhete_voo_377",
+            array("Attachement" => true)
+        );
+
+//        $tickets = Ticket::find([$id]);
+//
+//        return View::make('passageiro.historicopdf', ['$tickets' => $tickets]);
     }
 
     public function create()
