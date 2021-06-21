@@ -23,10 +23,10 @@ class ScaleController extends BaseController
      */
     public function index($idvoo)
     {
-        $scales = Scale::all();
         $flights = Flight::find([$idvoo]);
+        $planescales = Planescale::all();
 
-        return View::make('scale.index', ['flights' => $flights, 'scales' => $scales]);
+        return View::make('scale.index', ['flights' => $flights, 'planescales' => $planescales]);
     }
 
 

@@ -23,11 +23,10 @@ class LoginController
 
         $user = User::find_by_username_and_password($username, $password);
 
-        \ArmoredCore\WebObjects\Debug::barDump($user);
-
         if(is_null($user))
         {
-            Redirect::toRoute('login/getlogin');
+            $erro = 'ERRO! Username ou Password errados!';
+            Redirect::flashtoRoute('login/getlogin', ['erro' => $erro]);
         }
         else
         {
@@ -36,8 +35,6 @@ class LoginController
             $authmgr->setAuthData($user->id, $user->role);
 
             $role = $user->role;
-
-            \ArmoredCore\WebObjects\Debug::barDump($role);
 
             switch ($role)
             {
@@ -83,10 +80,6 @@ class LoginController
         } else {
             Redirect::flashToRoute('login/getregisto', ['user' => $user]);
         }
-
-
-
-
     }
 
     public function logout()

@@ -20,25 +20,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7001a1a5-552a-4369-8b2d-3d517ff80e18" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/webapp/view/passageiro/show.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/bg_header.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/bg_header.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/controller/FlightController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/FlightController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/controller/PassageiroController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/PassageiroController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/controller/PlaneScaleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/PlanescaleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/controller/ScaleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/ScaleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/controller/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/controller/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/TicketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/PlaneScale.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Planescale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/Scale.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/Scale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/admin/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/admin/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/gestorvoo/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/gestorvoo/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/home/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/home/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/layout/adminheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/adminheader.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/layout/footer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/footer.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/layout/gestorVooheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/gestorVooheader.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/layout/header.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/header.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/layout/indexheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/indexheader.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/layout/operadorCheckinheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/operadorCheckinheader.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/layout/passageiroheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/passageiroheader.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/flight/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/flight/index.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/view/login/login.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/login/login.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/operadorcheckin/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/operadorcheckin/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/passageiro/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/passageiro/index.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/login/registoform.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/login/registoform.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/operadorcheckin/detalhesvoo.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/operadorcheckin/detalhesvoo.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/passageiro/historicodetalhes.phtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/passageiro/historicopassagens.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/passageiro/historicopassagens.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/scale/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/scale/index.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/search/comprarticket.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/search/comprarticket.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/search/detalhes.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/search/detalhes.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/search/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/search/index.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/search/pagamentoticket.phtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/search/show.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/search/show.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/ticket/edit.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/ticket/edit.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/ticket/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/planescale/create.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/ticket/show.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/ticket/show.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,6 +217,10 @@
       <path value="$PROJECT_DIR$/vendor/Symfony/mime" />
       <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZA5DMEVoRQ6Eu1IVf9Y3ueUDaG" />
@@ -309,6 +321,7 @@
       <workItem from="1623081529858" duration="9933000" />
       <workItem from="1623249470153" duration="8831000" />
       <workItem from="1623590914179" duration="4741000" />
+      <workItem from="1624280906822" duration="25705000" />
     </task>
     <servers />
   </component>

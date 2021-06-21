@@ -11,8 +11,8 @@ class User extends Model
         array('email'),
         array('nif'),
         array('telefone'),
-        array('username'),
-        array('password'),
+        array('username', 'message'=> 'Required field'),
+        array('password', 'message'=> 'Required field'),
         array('role'),
     );
 

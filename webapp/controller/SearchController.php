@@ -48,14 +48,4 @@ class SearchController extends BaseAuthController
         return View::make('search.comprarticket' ,['flights' => $flights, 'user' => $user]);
     }
 
-    public function pagamentoticket($idvoo)
-    {
-        $this->authFilterByRole('passageiro');
-
-
-        $flights = Flight::find([$idvoo]);
-        $user = User::all(\ArmoredCore\WebObjects\Session::get('APP_USER_ID'));
-
-        return View::make('search.pagamentoticket' ,['flights' => $flights, 'user', $user]);
-    }
 }

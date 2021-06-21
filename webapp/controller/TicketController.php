@@ -47,13 +47,21 @@ class TicketController extends BaseController implements ResourceControllerInter
         //create new resource (activerecord/model) instance with data from POST
         //your form name fields must match the ones of the table fields
         $ticket = new Ticket(Post::getAll());
-        print_r($ticket);
+        $scales = Scale::find('all', array('idvoo' => $ticket->idvooida));
+
         if($ticket->is_valid()){
             $ticket->save();
-            Redirect::toRoute('passageiro/index');
+            foreach ($scales as $scale){
+                $planescale = Planescale::find(array('idescala' => $scale->id));
+
+                if($planescale != null){
+                    $planescale->update_attribute('nrpassageiros', $planescale->nrpassageiros +1);
+                }
+            }
+            Redirect::toRoute('passageiro/historicopassagens');
         } else {
             //redirect to form with data and errors
-            //Redirect::flashToRoute('ticket/create', ['ticket' => $ticket]);
+            Redirect::flashToRoute('search/comprarticket');
         }
     }
 
@@ -99,13 +107,14 @@ class TicketController extends BaseController implements ResourceControllerInter
         //your form name fields must match the ones of the table fields
         $ticket = Ticket::find([$id]);
         $ticket->update_attributes(Post::getAll());
-
+        print_r($ticket);
         if($ticket->is_valid()){
             $ticket->save();
+
             Redirect::toRoute('operadorcheckin/checkin');
         } else {
             //redirect to form with data and errors
-            Redirect::flashToRoute('ticket/edit', ['ticket' => $ticket]);
+            //Redirect::flashToRoute('ticket/edit', ['ticket' => $ticket]);
         }
     }
 

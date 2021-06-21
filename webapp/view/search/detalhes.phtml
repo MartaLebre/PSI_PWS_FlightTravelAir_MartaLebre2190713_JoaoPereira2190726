@@ -21,7 +21,7 @@ $flights = Data::get('flights');
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <hr>
-                        <form method="post" action="<?=Url::toRoute('search/comprarticket')?>">
+                        <form method="post" action="<?=Url::toRoute('search/comprarticket', $flights->id)?>">
                             <div class="top-margin">
                                 <label>Origem</label>
                                 <input readonly="true" type="text" value="<?=$flights->origem?>" name="origem" class="form-control">
@@ -35,12 +35,12 @@ $flights = Data::get('flights');
 
                             <div class="top-margin">
                                 <label>Data de Origem</label>
-                                <input readonly="true" type="text" value="<?=$flights->dataorigem?>" name="dataorigem" class="form-control">
+                                <input readonly="true" type="text" value="<?=$flights->dataorigem->format('Y-m-d')?>" name="dataorigem" class="form-control">
                             </div>
 
                             <div class="top-margin">
                                 <label>Data de Destino</label>
-                                <input readonly="true" type="text" value="<?=$flights->datadestino?>" name="datadestino" class="form-control">
+                                <input readonly="true" type="text" value="<?=$flights->datadestino->format('Y-m-d')?>" name="datadestino" class="form-control">
                             </div>
 
                             <div class="top-margin">
@@ -62,7 +62,7 @@ $flights = Data::get('flights');
                                 <div class="top-margin">
                                     <label>Data e Hora de Origem da Escala nº<?=$scale->id ?></label>
 
-                                    <input  readonly="true" type="text" value="<?=$scale->datahoraorigem ?>" name="datahoraorigem" class="form-control">
+                                    <input  readonly="true" type="text" value="<?=$scale->datahoraorigem->format('Y-m-d H:i:s') ?>" name="datahoraorigem" class="form-control">
                                 </div>
 
                                 <div class="top-margin">
@@ -73,7 +73,7 @@ $flights = Data::get('flights');
                                 <div class="top-margin">
                                     <label>Data e Hora de Destino da Escala nº<?=$scale->id ?></label>
 
-                                    <input  readonly="true" type="text" value="<?=$scale->datahoradestino ?>" name="datahoradestino" class="form-control">
+                                    <input  readonly="true" type="text" value="<?=$scale->datahoradestino->format('Y-m-d H:i:s') ?>" name="datahoradestino" class="form-control">
                                 </div>
 
                             <?php } ?>

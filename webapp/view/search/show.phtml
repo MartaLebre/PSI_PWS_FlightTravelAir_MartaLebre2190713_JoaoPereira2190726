@@ -37,30 +37,6 @@ $flightsvolta = Data::get('flightsvolta');
             </table>
         </div>
     </div> <!-- /row -->
-
-    <h2 class="text-left top-space">Voo de Volta</h2>
-    <h2 class="top-space"></h2>
-    <div class="row">
-        <div class="col-sm-1-12">
-            <table class="table table-striped"><thead><th><h3>Origem</h3></th><th><h3>Data de Origem</h3></th><th><h3>Destino</h3></th><th><h3>Data de Destino</h3></th><th><h3>Ações de Gestão</h3></th></thead>
-                <tbody>
-                <?php foreach ($flightsvolta as $flightvolta) { ?>
-                    <tr>
-                        <td><?=$flightvolta->destino?></td>
-                        <td><?=$flightvolta->dataorigem?></td>
-                        <td><?=$flightvolta->origem?></td>
-                        <td><?=$flightvolta->datadestino?></td>
-
-                        <td>
-                            <a href="<?=Url::toRoute('search/detalhes', $flightvolta->id)?>" class="btn btn-info" role="button">Detalhes</a>
-                            <a href="<?=Url::toRoute('search/comprarticket', $flightvolta->id)?>" class="btn btn-warning" role="button">Comprar passagem</a>
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
 </div>	<!-- /container -->
 <?php Layout::includeLayout('footer')?>
 

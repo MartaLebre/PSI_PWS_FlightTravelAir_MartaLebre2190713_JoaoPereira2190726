@@ -4,7 +4,9 @@ use ArmoredCore\WebObjects\URL;
 use ArmoredCore\WebObjects\Debug;
 
 Layout::includeLayout('passageiroheader') ?>
-<?php $tickets = Data::get('$tickets'); ?>
+<?php $tickets = Data::get('$tickets');
+$user = Data::get('user');
+?>
 
 <div class="container">
 
@@ -13,21 +15,25 @@ Layout::includeLayout('passageiroheader') ?>
         <li class="active">Bilhetes</li>
     </ol>
 
-    <h2 class="text-left top-space">Lista de bilhetes do passageiro</h2>
+    <h2 class="text-left top-space">Lista de bilhetes do passageiro <?=$user->nomecompleto?></h2>
     <h2 class="top-space"></h2>
     <div class="row">
         <div class="col-sm-1-12">
-            <table class="table table-striped"><thead><th><h3>nome</h3></th><th><h3>Preço</h3></th><th><h3>Data Compra </h3></th><th><h3>Checkin</h3><th><h3>Ações de Gestão</h3></th></thead>
+            <table class="table table-striped"><thead><th><h3>Preço</h3></th><th><h3>Data Compra</h3></th><th><h3>Origem</h3></th><th><h3>Destino</h3></th><th><h3>Checkin</h3></th><th><h3>Ações de Gestão</h3></th></thead>
                 <tbody>
                 <?php foreach ($tickets as $ticket) { ?>
                     <tr>
-                        <td><?=$ticket->utilizador->nomecompleto?></td>
-                        <td><?=$ticket->precofinal?></td>
+                        <td><?=$ticket->precofinal?> €</td>
                         <td><?=$ticket->datahoracompra?></td>
-                        <td><?=$ticket->checkin?></td>
+                        <td><?=$ticket->vooida->origem?></td>
+                        <td><?=$ticket->vooida->destino?></td>
+                        <?php if ($ticket->checkin == 1) { ?>
+                        <td>Checkin Realizado</td>
+                        <?php }else{ ?>
+                        <td>Checkin por realizar</td>
+                        <?php } ?>
                         <td>
-<!--                            <a href="--><?//=Url::toRoute('passageiro/historicodetalhes', $ticket->id)?><!--" class="btn btn-info" role="button">Ver detalhes</a>-->
-                            <a href="<?=Url::toRoute('passageiro/historicopdf', $ticket->id)?>" class="btn btn-warning" role="button">Baixar PDF do Bilhete</a>
+                           <a href="<?=Url::toRoute('passageiro/historicopdf', $ticket->id)?>" class="btn btn-warning" role="button">Baixar PDF do Bilhete</a>
                         </td>
                     </tr>
                 <?php } ?>

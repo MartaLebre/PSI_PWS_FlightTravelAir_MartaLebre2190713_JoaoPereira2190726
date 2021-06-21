@@ -2,6 +2,7 @@
 use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\ErrMgr;
 
 Layout::includeLayout('passageiroheader');
 ?>
@@ -33,12 +34,12 @@ Layout::includeLayout('passageiroheader');
 
                             <div class="top-margin">
                                 <label>Data de origem </label>
-                                <input type="date"  value="" name="dataorigem" class="form-control">
+                                <input type="text"  value="2021-00-00" name="dataorigem" class="form-control">
                             </div class="top-margin">
 
                             <div class="top-margin">
                                 <label>Data de destino </label>
-                                <input type="date"  value="" name="datadestino" class="form-control">
+                                <input type="text"  value="2021-00-00" name="datadestino" class="form-control">
                             </div>
 
                             <hr>

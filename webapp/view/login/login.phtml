@@ -2,7 +2,9 @@
 use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 
-Layout::includeLayout('header') ?>
+Layout::includeLayout('header');
+$erro = \ArmoredCore\WebObjects\Data::get('erro');
+?>
 
 <!-- container -->
 <div class="container">
@@ -36,8 +38,11 @@ Layout::includeLayout('header') ?>
                                 <label>Password <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" name="password">
                             </div>
-
                             <hr>
+
+                            <div>
+                                <p id="erro"><?php if(!$erro instanceof \ArmoredCore\MagicBlankModel) echo $erro; ?></p>
+                            </div>
 
                             <div class="row">
                                 <div class="col-lg-8">

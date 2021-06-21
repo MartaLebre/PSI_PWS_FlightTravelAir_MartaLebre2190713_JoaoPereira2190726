@@ -2,8 +2,10 @@
 use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 
-Layout::includeLayout('gestorVooheader') ?>
-<?php $flights = Data::get('flight') ?>
+Layout::includeLayout('gestorVooheader');
+$flights = Data::get('flight');
+$erro = Data::get('erro');
+?>
 
 <div class="container">
 
@@ -23,20 +25,24 @@ Layout::includeLayout('gestorVooheader') ?>
                         <td><?=$flight->precovoo?> €</td>
                         <td><?=$flight->origem?></td>
                         <td><?=$flight->destino?></td>
-                        <td><?=$flight->dataorigem?></td>
-                        <td><?=$flight->datadestino?></td>
-
+                        <td><?=$flight->dataorigem->format('Y-m-d')?></td>
+                        <td><?=$flight->datadestino->format('Y-m-d')?></td>
+                        <div>
+                            <p id="erro"><?php if(!$erro instanceof \ArmoredCore\MagicBlankModel) echo $erro; ?></p>
+                        </div>
                         <td>
                             <a href="<?=Url::toRoute('scale/index', $flight->id)?>" class="btn btn-info" role="button">Escalas</a>
                             <a href="<?=Url::toRoute('flight/edit', $flight->id)?>" class="btn btn-warning" role="button">Editar</a>
                             <a href="<?=Url::toRoute('flight/destroy', $flight->id)?>" class="btn btn-danger" role="button">Eliminar</a>
                         </td>
                     </tr>
+
                 <?php } ?>
                 </tbody>
             </table>
 
         </div>
+
         <div class="col-sm-6">
             <h3>Registar um novo Voo</h3>
             <p>

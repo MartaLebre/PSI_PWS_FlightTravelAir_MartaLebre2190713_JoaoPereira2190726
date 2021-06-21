@@ -18,16 +18,11 @@ class PassageiroController extends BaseAuthController
     public function historicopassagens()
     {
         $tickets = Ticket::all(array('conditions' => array('idutilizador = ?', \ArmoredCore\WebObjects\Session::get('APP_USER_ID'))));
+        $user = User::all(\ArmoredCore\WebObjects\Session::get('APP_USER_ID'));
 
-       return View::make('passageiro.historicopassagens', ['$tickets' => $tickets]);
+       return View::make('passageiro.historicopassagens', ['$tickets' => $tickets, 'user' => $user]);
     }
-
-//    public function historicodetalhes($id)
-//    {
-//        $tickets = Ticket::find([$id]);
-//
-//        return View::make('passageiro.historicodetalhes', ['$tickets' => $tickets]);
-//    }
+    
 
     public function historicopdf($id)
     {
@@ -35,16 +30,24 @@ class PassageiroController extends BaseAuthController
 
         $pdf = new Dompdf();
 
-        $pdf->loadHtml('<h1> '.$tickets->id.' </h1>
-        <h1> '.$tickets->precofinal.' </h1>
-        <h1> '.$tickets->datahoracompra.' </h1>
-        <h1> '.$tickets->vooida->origem.' </h1>
-        <?=  ?>
-        <h1>'.$tickets->checkin.'</h1>
-        <h1> '.$tickets->voovolta->origem.' </h1>
-    
 
-');
+        $pdf->loadHtml('<h1>Bilhete nº' . $tickets->id . ' </h1>
+        <p>_______________________________________________________________________________________</p>
+        <br>
+        <h3> Nome do passageiro: ' . $tickets->utilizador->nomecompleto . ' </h3>
+        <p class="tagline">Preço: ' . $tickets->precofinal . ' € </p>
+        <p>Data e hora de compra do bilhete: ' . $tickets->datahoracompra->format('Y-m-d H:i:s') . ' </p>
+        <p>Viagem: ' . $tickets->vooida->origem . ' - ' . $tickets->vooida->destino . ' </p>
+        <p>Data Origem: ' . $tickets->vooida->dataorigem->format('Y-m-d') . '</p>
+        <p>Data Destino: ' . $tickets->vooida->datadestino->format('Y-m-d') . '</p>
+        <p>Checkin: ' . $tickets->checkin . ' </p>
+        <br>
+        <br>
+        <p>Nota: Se o checkin estiver assinalado como 1 significa que já tem o checkin realizado!</p>
+        <br>
+        <p>_______________________________________________________________________________________</p>');
+
+
 
         $pdf->render();
 

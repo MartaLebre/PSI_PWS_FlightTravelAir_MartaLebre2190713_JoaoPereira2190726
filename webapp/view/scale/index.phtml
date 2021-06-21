@@ -5,6 +5,7 @@ use ArmoredCore\WebObjects\URL;
 Layout::includeLayout('gestorVooheader');
 $flights = Data::get('flights');
 $scales = Data::get('scales');
+$planescales = Data::get('planescales');
 ?>
 
 <div class="container">
@@ -19,16 +20,31 @@ $scales = Data::get('scales');
     <h2 class="top-space"></h2>
     <div class="row">
         <div class="col-sm-1-12">
-            <table class="table table-striped"><thead><th><h4>Data e Hora de Origem</h4></th><th><h4>Data e Hora de Destino</h4><th><h4>Distância</h4></th><th><h4>Aeroporto Origem</h4></th><th><h4>Aeroporto Destino</h4></th><th><h4>Ações de Gestão</h4></th></thead>
+            <table class="table table-striped"><thead><th><h4>Data e Hora de Origem</h4></th><th><h4>Data e Hora de Destino</h4><th><h4>Distância</h4></th><th><h4>Aeroporto Origem</h4></th><th><h4>Aeroporto Destino</h4></th><th><h4>Nº Passageiros</h4></th><th><h4>Ações de Gestão</h4></th></thead>
                 <tbody>
-                <?php foreach ($flights->scales as $scale) { ?>
+                <?php foreach ($flights->scales as $scale) {
+                        foreach ($planescales as $planescale) {
+                            if($planescale->idescala == $scale->id){
+                                $nrpassageiros = $planescale->nrpassageiros;
+                            }
+                        } ?>
                     <tr>
-                        <td><?=$scale->datahoraorigem?></td>
-                        <td><?=$scale->datahoradestino?></td>
+                        <td><?=$scale->datahoraorigem->format('Y-m-d H:i:s')?></td>
+                        <td><?=$scale->datahoradestino->format('Y-m-d H:i:s')?></td>
                         <td><?=$scale->distancia?> km</td>
                         <td><?=$scale->aeroportoorigem->nome?></td>
                         <td><?=$scale->aeroportodestino->nome?></td>
+                        <td><?=$nrpassageiros?></td>
                         <td>
+                            <?php
+                            $teste = false;
+                            foreach ($planescales as $planescale) {
+                                if( $planescale->idescala == $scale->id){
+                                    $teste = true;
+                                }
+                             } if($teste == false){ ?>
+                            <a href="<?=Url::toRoute('planescale/create', $scale->id)?>" class="btn btn-info" role="button">Selecionar Avião</a>
+                            <?php } ?>
                             <a href="<?=Url::toRoute('scale/edit', $scale->id)?>" class="btn btn-warning" role="button">Editar</a>
                             <a href="<?=Url::toRoute('scale/destroy', $scale->id)?>" class="btn btn-danger" role="button">Eliminar</a>
                         </td>

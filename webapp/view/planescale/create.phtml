@@ -1,0 +1,70 @@
+<?php use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\ErrMgr;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+
+Layout::includeLayout('gestorVooheader');
+$planescale = Data::get('planescale');
+$planes = Data::get('planes');
+$idescala = Data::get('idescala');
+?>
+
+<?php ErrMgr::attach($planescale) ?>
+
+
+<!-- container -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Article main content -->
+        <article class="col-xs-12 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">Associar um Avião a uma escala</h1>
+            </header>
+
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <hr>
+                        <form method="post" action="<?=Url::toRoute('planescale/store')?>">
+                            <div class="top-margin">
+                                <label>Avião<span class="text-danger">*</span></label>
+                                <select name="idaviao" class="form-control" value="<?=$planescale->idaviao?>">
+                                    <?php foreach ($planes as $plane){ ?>
+                                        <option value="<?=$plane->id?>"><?=$plane->referencia?></option>
+                                    <?php } ?>
+                                </select>
+                                <?= ErrMgr::bind('idaviao') ?>
+                            </div>
+
+                            <div>
+                                <input type="hidden" value="0" name="nrpassageiros" class="form-control">
+                            </div>
+
+                            <div>
+                                <input type="hidden" value="<?=$idescala?>" name="idescala" class="form-control">
+                            </div>
+
+                            <hr>
+
+                            <div class="col-lg-4 text-right">
+                                <button class="btn btn-action" type="submit">Registar</button>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+                <form method="post" action="<?=URL::toRoute('flight/index')?>">
+                    <button class="btn btn-danger" type="submit">Cancelar</button>
+                </form>
+            </div>
+
+    </div>
+
+    </article>
+    <!-- /Article -->
+
+</div>
+</div>	<!-- /container -->
+
+<?php Layout::includeLayout('footer') ?>

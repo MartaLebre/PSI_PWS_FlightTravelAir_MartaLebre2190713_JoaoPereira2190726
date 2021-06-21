@@ -7,6 +7,7 @@ use ArmoredCore\WebObjects\ErrMgr;
 Layout::includeLayout('passageiroheader');
 $flights = Data::get('flights');
 $user = Data::get('user');
+$date = new DateTime('NOW');
 ErrMgr::attach($user);
 ?>
 
@@ -69,15 +70,15 @@ ErrMgr::attach($user);
 
 
                             <div>
-                                <input type="hidden" value="<?=$flights->precovoo + 20?>" name="precofinal" class="form-control">
+                                <input type="hidden" value="<?=$flights->precovoo + 40?>" name="precofinal" class="form-control">
                             </div>
 
                             <div>
-                                <input type="hidden" value= name="datahoracompra" class="form-control">
+                                <input type="hidden" value="<?=$date->format('Y-m-d H:i:s')?>" name="datahoracompra" class="form-control">
                             </div>
 
                             <div>
-                                <input type="hidden" value= name="checkin" class="form-control">
+                                <input type="hidden" value="0" name="checkin" class="form-control">
                             </div>
 
                             <div>
@@ -94,7 +95,7 @@ ErrMgr::attach($user);
 
                             <hr>
                             <div class="col-lg-4 text-right">
-                                <button class="btn btn-default" type="submit">Next</button>
+                                <button class="btn btn-default" type="submit">Comprar</button>
                             </div>
                     </div>
                     </form>

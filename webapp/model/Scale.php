@@ -14,6 +14,6 @@ class Scale extends \ActiveRecord\Model
 
     static $belongs_to = array(
         array('aeroportoorigem', 'class_name' => 'Aeroport', 'foreign_key'=>'idaeroportoorigem'),
-        array('aeroportodestino', 'class_name' => 'Aeroport', 'foreign_key'=>'idaeroportodestino')
+        array('aeroportodestino', 'class_name' => 'Aeroport', 'foreign_key'=>'idaeroportodestino'),
     );
 }

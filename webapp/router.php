@@ -52,6 +52,7 @@ Router::resource('gestorvoo',    'GestorVooController');
 Router::resource('flight',    'FlightController');
 Router::resource('plane',    'PlaneController');
 Router::resource('scale', 'ScaleController');
+Router::resource('planescale', 'PlanescaleController');
 
 
 

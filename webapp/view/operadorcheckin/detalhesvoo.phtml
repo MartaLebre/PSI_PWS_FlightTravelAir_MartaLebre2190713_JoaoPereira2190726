@@ -38,20 +38,26 @@ Layout::includeLayout('operadorCheckinheader') ?>
                             </div>
                             <div class="top-margin">
                                 <label>Data de Origem</label>
-                                <input readonly="true" type="text" value="<?=$tickets->vooida->dataorigem?>" name="dataorigem" class="form-control">
+                                <input readonly="true" type="text" value="<?=$tickets->vooida->dataorigem->format('Y-m-d')?>" name="dataorigem" class="form-control">
                             </div>
                             <div class="top-margin">
                                 <label>Data de Destino</label>
-                                <input readonly="true" type="text" value="<?=$tickets->vooida->datadestino?>" name="datadestino" class="form-control">
+                                <input readonly="true" type="text" value="<?=$tickets->vooida->datadestino->format('Y-m-d')?>" name="datadestino" class="form-control">
                             </div>
 
                             <label>___________________________________________________________________</label>
 
                             <h3 class="page-title">Detalhes do Voo de Volta</h3>
+
+                            <?php if($tickets->idvoovolta == $tickets->idvooida){?>
+                                <label>Este Passageiro não comprou bilhete de volta</label>
+                            <?php }else{?>
+
                             <div class="top-margin">
                                 <label>Preco Final</label>
                                 <input readonly="true" type="text" value="<?php echo $tickets->precofinal?>" name="precofinal" class="form-control">
                             </div>
+
                             <div class="top-margin">
                                 <label>Origem</label>
                                 <input readonly="true" type="text" value="<?=$tickets->voovolta->origem?>" name="origem" class="form-control">
@@ -62,12 +68,13 @@ Layout::includeLayout('operadorCheckinheader') ?>
                             </div>
                             <div class="top-margin">
                                 <label>Data de Origem</label>
-                                <input readonly="true" type="text" value="<?=$tickets->voovolta->dataorigem?>" name="dataorigem" class="form-control">
+                                <input readonly="true" type="text" value="<?=$tickets->voovolta->dataorigem->format('Y-m-d')?>" name="dataorigem" class="form-control">
                             </div>
                             <div class="top-margin">
                                 <label>Data de Destino</label>
-                                <input readonly="true" type="text" value="<?=$tickets->voovolta->datadestino?>" name="datadestino" class="form-control">
+                                <input readonly="true" type="text" value="<?=$tickets->voovolta->datadestino->format('Y-m-d')?>" name="datadestino" class="form-control">
                             </div>
+                            <?php }?>
 
                             <hr>
 

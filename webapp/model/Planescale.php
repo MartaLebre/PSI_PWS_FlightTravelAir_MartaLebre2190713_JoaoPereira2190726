@@ -1,7 +1,7 @@
 <?php
 
 
-class PlaneScale extends \ActiveRecord\Model
+class Planescale extends \ActiveRecord\Model
 {
     static $validates_presence_of = array(
         array('nrpassageiros'),
@@ -13,8 +13,8 @@ class PlaneScale extends \ActiveRecord\Model
         array('nrpassageiros', 'only_integer' => true)
     );
 
-    static $has_many = array(
-        array('planescales', 'class_name'=> 'Scale' ,'foreign_key'=> 'idescala'),
+    static $belongs_to = array(
+        array('scales', 'class_name'=> 'Scale' ,'foreign_key'=> 'idescala'),
         array('planes', 'class_name'=> 'Plane' ,'foreign_key'=> 'idaviao')
     );
 }
