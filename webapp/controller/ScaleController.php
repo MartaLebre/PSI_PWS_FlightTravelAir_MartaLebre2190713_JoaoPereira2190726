@@ -35,7 +35,7 @@ class ScaleController extends BaseController
      */
     public function create($idvoo)
     {
-        print_r($idvoo);
+        //print_r($idvoo);
         $aeroports = Aeroport::all();
 
         return View::make('scale.create', ['aeroports' => $aeroports, 'idvoo' => $idvoo]);
